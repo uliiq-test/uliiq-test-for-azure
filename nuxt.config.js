@@ -26,7 +26,8 @@ const host =
   process.env.npm_package_config_nuxt_host ||
   "localhost"
 
-export default {
+//export default {
+module.exports = {
   build: {
     extend (config, { isClient, loaders: { vue } }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
