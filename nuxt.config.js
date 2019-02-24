@@ -24,9 +24,8 @@ const host =
   argv.hostname ||
   process.env.HOST ||
   process.env.npm_package_config_nuxt_host ||
-  "localhost"
+  "127.0.0.1"
 
-//export default {
 module.exports = {
   build: {
     extend (config, { isClient, loaders: { vue } }) {
@@ -150,7 +149,7 @@ module.exports = {
   /* TODO:APIサーバのURLが決まったらここにベースのURLを記入する 例：https://hogehogeapi */
   axios: {
     //baseUrl :'https://wishhub-dev-api.azurewebsites.net/api/'
-    baseUrl : 'http://localhost:3000'
+    baseUrl : 'http://127.0.0.1:3000'
     //baseUrl : 'http://localhost:8080'
   }
 }
