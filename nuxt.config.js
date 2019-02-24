@@ -1,4 +1,5 @@
-import parseArgs from "minimist";
+//import parseArgs from "minimist";
+const parseArgs = require('minimist')
 // SPAモードを有効。未設定（デフォルト）ではSSRモード TODO:SPAモードが不要となったら消す
 /*
 module.exports = {
