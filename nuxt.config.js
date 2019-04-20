@@ -19,16 +19,29 @@ const host =
   process.env.npm_package_config_nuxt_host ||
   "127.0.0.1"
 
-// azure環境の場合、baseUrlはazureのURLを設定する
-var azureurl
-  if (process.env.WEBSITE_HOSTNAME) {
-    azureurl = "https://" + process.env.WEBSITE_HOSTNAME ;
-  }
 
-const newLocal = 'msal';
+var GTAG_ID = 'UA-XXXXXXX-XX';
+if(process.env.ASPNETCORE_ENVIRONMENT === 'production'){
+  // 本番環境設定値
+  GTAG_ID='UA-2977992-32'
+} else if (process.env.ASPNETCORE_ENVIRONMENT === 'developmen') {
+  // テスト環境設定値
+  GTAG_ID='UA-DDDDDDD-DD'
+} else if (process.env.ASPNETCORE_ENVIRONMENT === 'uliiq') {
+  // ユリーク環境設定値
+  GTAG_ID='UA-UUUUUUU-UU'
+}　else if (process.env.ASPNETCORE_ENVIRONMENT === 'local') {
+  // ローカル環境設定値
+  GTAG_ID='UA-LLLLLLL-LL'
+}
+
+
 module.exports = {
+  //TODO:現在認証がSPAモードでしか動作しないため、以下の設定を一時的に追加。
+  // mode: 'spa',
   build: {
-    vendor: [newLocal],
+    vendor: ['msal','vue-awesome-swiper'],
+
     extend (config, { isClient, loaders: { vue } }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
@@ -36,9 +49,12 @@ module.exports = {
       }
     }
   },
+
+  router: {
+    middleware: ['auth']
+  },
   env: {
-    baseUrl:
-      azureurl || process.env.BASE_URL || `http://${host}:${port}`
+    baseUrl: process.env.BASE_URL || `http://${host}:${port}`,
   },
   head: {
     title: "WishHub（ウィッシュハブ）｜アイドル・アーティストの「お願い」をファンの行動で「叶える」",
@@ -70,29 +86,10 @@ module.exports = {
       }
     ],
     script: [
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js',
-          class: 'pre'
-        },
-        {
-          src: 'https://secure.aadcdn.microsoftonline-p.com/lib/0.1.1/js/msal.min.js'
-        },
-        {
-          src: 'https://code.jquery.com/jquery-3.2.1.min.js',
-          class: 'pre'
-        }
+        { src: 'https://secure.aadcdn.microsoftonline-p.com/lib/0.1.1/js/msal.min.js' },
+        { src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', type: 'text/javascript', body: true  },
     ],
     link: [
-      //TODO:各スタイルシートの整理をする
-      /*
-      ** 初期取り込み
-      */ 
-      // Favicon
-      {
-        rel: "icon",
-        type: "image/png",
-        href: "~assets/img/brand/favicon.png"
-      },
       // Fonts
       {
         rel: "stylesheet",
@@ -108,13 +105,11 @@ module.exports = {
         rel: "stylesheet",
         src: "https://fonts.googleapis.com/css?family=M+PLUS+1p"
       },
-    ],
-    script: [
-      /*
-      ** V0218
-      */
-     { src: "https://secure.aadcdn.microsoftonline-p.com/lib/0.1.1/js/msal.min.js" },
-     { src: "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" }
+      {
+        rel: "shortcut icon",
+        href: "/favicon.ico?v=2",
+        type: "image/vnd.microsoft.icon"
+      }
     ]
   },
   /*
@@ -125,51 +120,40 @@ module.exports = {
   ** Build configuration
   */
   css: [
-    //TODO:各スタイルシートの整理をする
-    /*
-    ** 初期取り込み
-    */
-    // Icons
     "~assets/vendor/nucleo/css/nucleo.css",
     "~assets/vendor/font-awesome/css/font-awesome.min.css",
-    // WishHub CSS
-    //"~assets/css/main.css",
-    // JS CSS
-    "~assets/css/slick.css",
-    "~assets/css/slick-theme.css",
-    /*
-    ** V0218
-    */
-    //"~assets/V0218/dest/style.css",
-    /*
-    ** V0305
-    */
-    //"~assets/V0305/dest/style.css",
-    /*
-    ** V0308
-    */
-   "~assets/V0308/dest/style.css",
+    "swiper/dist/css/swiper.css",
+    "~assets/dest/style.css",
   ],
   build: {},
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
-    "~/modules/typescript.js"
-    //"~/modules/V0218/js/scroll.js"
+    "~/modules/typescript.js",
+    ['@nuxtjs/google-analytics', {
+        id: `${GTAG_ID}`
+      }
+    ]
   ],
   plugins:[
-    '~/plugins/axios.ts'
+    //{ src: '~plugins/persistedstate.ts', ssr: false },
+    '~/plugins/cookie-storage.ts',
+    //{ src: '~/plugins/localStorage.ts', ssr: false },
+    '~/plugins/axios.ts',
+    '~/plugins/filters.ts',
+    { src: '~plugins/vue-awesome-swiper.ts', ssr: false },
+    { src:'~/plugins/MsalWishHub.ts', ssr:false},
+    { src: '~/plugins/infiniteloading', ssr: false },
   ],
   manifest: {
     name: "WishHub's Page",
     lang: 'ja'
   },
   axios :{
-    baseURL: "https://wishhub-dev-api.azurewebsites.net" || azureurl || `http://${host}:${port}`,
+    baseURL: "https://wishhub-dev-api.azurewebsites.net" || `http://${host}:${port}`,    
     proxy:true
   },
   proxy: {
-      '/api' :'https://wishhub-dev-api.azurewebsites.net',
-      //'/tfp' :'https://login.microsoftonline.com'
+      '/api' :'https://wishhub-dev-api.azurewebsites.net'
   },
 }

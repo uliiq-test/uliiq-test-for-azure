@@ -4,7 +4,7 @@ import { createRouter } from './router.js'
 import NoSSR from './components/no-ssr.js'
 import NuxtChild from './components/nuxt-child.js'
 import NuxtLink from './components/nuxt-link.js'
-import NuxtError from './components/nuxt-error.vue'
+import NuxtError from '..\\layouts\\error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
@@ -12,9 +12,14 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_swplugin_60452afe from 'nuxt_plugin_swplugin_60452afe' // Source: ./sw.plugin.js (ssr: false)
-import nuxt_plugin_axios_c6f04036 from 'nuxt_plugin_axios_c6f04036' // Source: ./axios.js
+import nuxt_plugin_googleanalytics_c1fd2454 from 'nuxt_plugin_googleanalytics_c1fd2454' // Source: ./google-analytics.js (ssr: false)
+import nuxt_plugin_axios_4e3a9850 from 'nuxt_plugin_axios_4e3a9850' // Source: ./axios.js
+import nuxt_plugin_cookiestorage_d91145b6 from 'nuxt_plugin_cookiestorage_d91145b6' // Source: ..\\plugins\\cookie-storage.ts
 import nuxt_plugin_axios_5659cf26 from 'nuxt_plugin_axios_5659cf26' // Source: ..\\plugins\\axios.ts
+import nuxt_plugin_filters_2dd71148 from 'nuxt_plugin_filters_2dd71148' // Source: ..\\plugins\\filters.ts
+import nuxt_plugin_vueawesomeswiper_8efa2a66 from 'nuxt_plugin_vueawesomeswiper_8efa2a66' // Source: ..\\plugins\\vue-awesome-swiper.ts (ssr: false)
+import nuxt_plugin_MsalWishHub_7906c434 from 'nuxt_plugin_MsalWishHub_7906c434' // Source: ..\\plugins\\MsalWishHub.ts (ssr: false)
+import nuxt_plugin_infiniteloading_68d2fb1c from 'nuxt_plugin_infiniteloading_68d2fb1c' // Source: ..\\plugins\\infiniteloading (ssr: false)
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
@@ -153,11 +158,16 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_axios_c6f04036 === 'function') await nuxt_plugin_axios_c6f04036(app.context, inject)
+  if (typeof nuxt_plugin_axios_4e3a9850 === 'function') await nuxt_plugin_axios_4e3a9850(app.context, inject)
+  if (typeof nuxt_plugin_cookiestorage_d91145b6 === 'function') await nuxt_plugin_cookiestorage_d91145b6(app.context, inject)
   if (typeof nuxt_plugin_axios_5659cf26 === 'function') await nuxt_plugin_axios_5659cf26(app.context, inject)
+  if (typeof nuxt_plugin_filters_2dd71148 === 'function') await nuxt_plugin_filters_2dd71148(app.context, inject)
 
   if (process.client) {
-    if (typeof nuxt_plugin_swplugin_60452afe === 'function') await nuxt_plugin_swplugin_60452afe(app.context, inject)
+    if (typeof nuxt_plugin_googleanalytics_c1fd2454 === 'function') await nuxt_plugin_googleanalytics_c1fd2454(app.context, inject)
+    if (typeof nuxt_plugin_vueawesomeswiper_8efa2a66 === 'function') await nuxt_plugin_vueawesomeswiper_8efa2a66(app.context, inject)
+    if (typeof nuxt_plugin_MsalWishHub_7906c434 === 'function') await nuxt_plugin_MsalWishHub_7906c434(app.context, inject)
+    if (typeof nuxt_plugin_infiniteloading_68d2fb1c === 'function') await nuxt_plugin_infiniteloading_68d2fb1c(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

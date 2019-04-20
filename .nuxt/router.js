@@ -2,24 +2,21 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _00ed627e = () => interopDefault(import('..\\pages\\about\\index.vue' /* webpackChunkName: "pages_about_index" */))
-const _23fd0b42 = () => interopDefault(import('..\\pages\\artists\\index.vue' /* webpackChunkName: "pages_artists_index" */))
-const _73c0c040 = () => interopDefault(import('..\\pages\\bounties\\index.vue' /* webpackChunkName: "pages_bounties_index" */))
-const _b0625bb6 = () => interopDefault(import('..\\pages\\products\\index.vue' /* webpackChunkName: "pages_products_index" */))
-const _116a96d4 = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
-const _3350c18b = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
-const _42d364f2 = () => interopDefault(import('..\\pages\\account\\my\\index.vue' /* webpackChunkName: "pages_account_my_index" */))
-const _2e712c06 = () => interopDefault(import('..\\pages\\account\\signup\\index.vue' /* webpackChunkName: "pages_account_signup_index" */))
-const _46f1b821 = () => interopDefault(import('..\\pages\\account\\my\\artist_profile\\index.vue' /* webpackChunkName: "pages_account_my_artist_profile_index" */))
-const _8bac956e = () => interopDefault(import('..\\pages\\account\\my\\bounties\\index.vue' /* webpackChunkName: "pages_account_my_bounties_index" */))
-const _c84e30e4 = () => interopDefault(import('..\\pages\\account\\my\\products\\index.vue' /* webpackChunkName: "pages_account_my_products_index" */))
-const _39c22019 = () => interopDefault(import('..\\pages\\account\\my\\profile\\index.vue' /* webpackChunkName: "pages_account_my_profile_index" */))
-const _e33a2b08 = () => interopDefault(import('..\\pages\\account\\my\\books\\create\\index.vue' /* webpackChunkName: "pages_account_my_books_create_index" */))
-const _0ba4dcdc = () => interopDefault(import('..\\pages\\account\\my\\products\\create\\index.vue' /* webpackChunkName: "pages_account_my_products_create_index" */))
-const _3bceeef2 = () => interopDefault(import('..\\pages\\artists\\_id.vue' /* webpackChunkName: "pages_artists__id" */))
-const _0a57cb70 = () => interopDefault(import('..\\pages\\bounties\\_id.vue' /* webpackChunkName: "pages_bounties__id" */))
-const _d675cc66 = () => interopDefault(import('..\\pages\\products\\_id.vue' /* webpackChunkName: "pages_products__id" */))
-const _1c7a5049 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _210285ad = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
+const _56268fdc = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
+const _312de5ea = () => interopDefault(import('..\\pages\\account\\my\\index.vue' /* webpackChunkName: "pages_account_my_index" */))
+const _7d59c0c2 = () => interopDefault(import('..\\pages\\account\\signup\\index.vue' /* webpackChunkName: "pages_account_signup_index" */))
+const _606d0512 = () => interopDefault(import('..\\pages\\admin\\account\\index.vue' /* webpackChunkName: "pages_admin_account_index" */))
+const _006b5706 = () => interopDefault(import('..\\pages\\admin\\token\\index.vue' /* webpackChunkName: "pages_admin_token_index" */))
+const _0822d222 = () => interopDefault(import('..\\pages\\account\\my\\bounties\\index.vue' /* webpackChunkName: "pages_account_my_bounties_index" */))
+const _0b94f7c0 = () => interopDefault(import('..\\pages\\account\\my\\profile\\index.vue' /* webpackChunkName: "pages_account_my_profile_index" */))
+const _c32c6876 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\index.vue' /* webpackChunkName: "pages_account_my_rewards_index" */))
+const _527da826 = () => interopDefault(import('..\\pages\\account\\my\\bounties\\create\\index.vue' /* webpackChunkName: "pages_account_my_bounties_create_index" */))
+const _3a4e4ec9 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\create\\index.vue' /* webpackChunkName: "pages_account_my_rewards_create_index" */))
+const _1c9f1140 = () => interopDefault(import('..\\pages\\artists\\_id.vue' /* webpackChunkName: "pages_artists__id" */))
+const _438bf2e2 = () => interopDefault(import('..\\pages\\bounties\\_id.vue' /* webpackChunkName: "pages_bounties__id" */))
+const _37c02548 = () => interopDefault(import('..\\pages\\rewards\\_id.vue' /* webpackChunkName: "pages_rewards__id" */))
+const _b88f18e0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -79,76 +76,64 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
-      path: "/about",
-      component: _00ed627e,
-      name: "about"
-    }, {
-      path: "/artists",
-      component: _23fd0b42,
-      name: "artists"
-    }, {
-      path: "/bounties",
-      component: _73c0c040,
-      name: "bounties"
-    }, {
-      path: "/products",
-      component: _b0625bb6,
-      name: "products"
-    }, {
       path: "/rules",
-      component: _116a96d4,
+      component: _210285ad,
       name: "rules"
     }, {
       path: "/tradelaw",
-      component: _3350c18b,
+      component: _56268fdc,
       name: "tradelaw"
     }, {
       path: "/account/my",
-      component: _42d364f2,
+      component: _312de5ea,
       name: "account-my"
     }, {
       path: "/account/signup",
-      component: _2e712c06,
+      component: _7d59c0c2,
       name: "account-signup"
     }, {
-      path: "/account/my/artist_profile",
-      component: _46f1b821,
-      name: "account-my-artist_profile"
+      path: "/admin/account",
+      component: _606d0512,
+      name: "admin-account"
+    }, {
+      path: "/admin/token",
+      component: _006b5706,
+      name: "admin-token"
     }, {
       path: "/account/my/bounties",
-      component: _8bac956e,
+      component: _0822d222,
       name: "account-my-bounties"
     }, {
-      path: "/account/my/products",
-      component: _c84e30e4,
-      name: "account-my-products"
-    }, {
       path: "/account/my/profile",
-      component: _39c22019,
+      component: _0b94f7c0,
       name: "account-my-profile"
     }, {
-      path: "/account/my/books/create",
-      component: _e33a2b08,
-      name: "account-my-books-create"
+      path: "/account/my/rewards",
+      component: _c32c6876,
+      name: "account-my-rewards"
     }, {
-      path: "/account/my/products/create",
-      component: _0ba4dcdc,
-      name: "account-my-products-create"
+      path: "/account/my/bounties/create",
+      component: _527da826,
+      name: "account-my-bounties-create"
     }, {
-      path: "/artists/:id",
-      component: _3bceeef2,
+      path: "/account/my/rewards/create",
+      component: _3a4e4ec9,
+      name: "account-my-rewards-create"
+    }, {
+      path: "/artists/:id?",
+      component: _1c9f1140,
       name: "artists-id"
     }, {
-      path: "/bounties/:id",
-      component: _0a57cb70,
+      path: "/bounties/:id?",
+      component: _438bf2e2,
       name: "bounties-id"
     }, {
-      path: "/products/:id",
-      component: _d675cc66,
-      name: "products-id"
+      path: "/rewards/:id?",
+      component: _37c02548,
+      name: "rewards-id"
     }, {
       path: "/",
-      component: _1c7a5049,
+      component: _b88f18e0,
       name: "index"
     }],
 
