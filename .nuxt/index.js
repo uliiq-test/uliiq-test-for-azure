@@ -12,6 +12,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+import nuxt_plugin_swplugin_0fbfb5e9 from 'nuxt_plugin_swplugin_0fbfb5e9' // Source: ./sw.plugin.js (ssr: false)
 import nuxt_plugin_googleanalytics_c1fd2454 from 'nuxt_plugin_googleanalytics_c1fd2454' // Source: ./google-analytics.js (ssr: false)
 import nuxt_plugin_axios_4e3a9850 from 'nuxt_plugin_axios_4e3a9850' // Source: ./axios.js
 import nuxt_plugin_cookiestorage_d91145b6 from 'nuxt_plugin_cookiestorage_d91145b6' // Source: ..\\plugins\\cookie-storage.ts
@@ -164,6 +165,7 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_filters_2dd71148 === 'function') await nuxt_plugin_filters_2dd71148(app.context, inject)
 
   if (process.client) {
+    if (typeof nuxt_plugin_swplugin_0fbfb5e9 === 'function') await nuxt_plugin_swplugin_0fbfb5e9(app.context, inject)
     if (typeof nuxt_plugin_googleanalytics_c1fd2454 === 'function') await nuxt_plugin_googleanalytics_c1fd2454(app.context, inject)
     if (typeof nuxt_plugin_vueawesomeswiper_8efa2a66 === 'function') await nuxt_plugin_vueawesomeswiper_8efa2a66(app.context, inject)
     if (typeof nuxt_plugin_MsalWishHub_7906c434 === 'function') await nuxt_plugin_MsalWishHub_7906c434(app.context, inject)

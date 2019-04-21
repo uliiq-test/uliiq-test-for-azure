@@ -122,14 +122,14 @@ export async function setContext(app, context) {
   if (!app.context) {
     app.context = {
       isStatic: process.static,
-      isDev: true,
+      isDev: false,
       isHMR: false,
       app,
       store: app.store,
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"baseUrl":"http://127.0.0.1:3000"}
+      env: {"baseUrl":"http://127.0.0.1:3000","TOKEN":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJleHAiOjE1NTU4MTQ5NDksIm5iZiI6MTU1NTgxMTM0OSwidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5taWNyb3NvZnRvbmxpbmUuY29tLzEyMzM3MTEzLWY0NjQtNDczYy1hMzg1LTYwYTFiYmE3OTkzOC92Mi4wLyIsInN1YiI6IjdjZmZhYTVlLWU0NjMtNGU3Yi1iOTc0LWY4ZTA5MTVkNmUwYiIsImF1ZCI6ImU5MjFiYzRhLWIwYjktNGZhMi1hMTM4LTkxY2QwNjE3MDY5ZSIsIm5vbmNlIjoiYjQyYTg5NjktNDczMC00ZmJkLWI4YTktOGQ1NWQxZjBiNTY0IiwiaWF0IjoxNTU1ODExMzQ5LCJhdXRoX3RpbWUiOjE1NTU4MTEzNDksImlkcCI6ImZhY2Vib29rLmNvbSIsIm9pZCI6IjdjZmZhYTVlLWU0NjMtNGU3Yi1iOTc0LWY4ZTA5MTVkNmUwYiIsInRmcCI6IkIyQ18xX3dpc2hodWJfZGV2In0.Z_dxa_2kRyvwIx3SjJvt1gAxwMQ0TrADKGNqBZ8NBPrUJO9iRyLoG7YV2NmsDm9IWWKj8VWvzw9a-p9WrJoigG4tzAVQH0D2gqaUVLEuEuy7xlx9ibWPpyD-35g-7KouUyOOCeM8LpfnbngCydH_Y4uYr4S3Qnfm8uWq-JCjHnQxIIFy9ZbGoyQ8d70g_2R5A-CryumLxjKT8t9xPVroyh90z1ZQRO2A5uvRWIYKqwJ5LBgU1ddKYWRAujYp0Z5w5MvZV-0rEuy3zsqSwrHE12guzieBjxxbZE6tlpaMg2jhmH49XGrlOroNr8JYHDKYX2dQRAftvQiT3MOq60DVhw"}
     }
     // Only set once
     if (context.req) app.context.req = context.req
@@ -209,9 +209,6 @@ export function middlewareSeries(promises, appContext) {
 export function promisify(fn, context) {
   let promise
   if (fn.length === 2) {
-      console.warn('Callback-based asyncData, fetch or middleware calls are deprecated. ' +
-        'Please switch to promises or async/await syntax')
-
     // fn(context, callback)
     promise = new Promise((resolve) => {
       fn(context, function (err, data) {
