@@ -1,0 +1,25 @@
+.ruleTitle{
+  font-size:1.8rem;
+  color:$Black;
+}
+.middleHedding{
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  color:$Black;
+}
+.ruleIndent{
+  text-indent: 1.4rem;
+}
+div.bgWhite{
+  background-color:$White;
+  padding:3rem;
+  margin:2rem auto;
+
+}
+div.bgWhite p{
+  line-height: 2.2rem;
+  padding: 0.5rem 0;
+}
+.fuki{
+  margin-top:3rem;
+}

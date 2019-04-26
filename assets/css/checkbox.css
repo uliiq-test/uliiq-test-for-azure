@@ -1,0 +1,44 @@
+
+/*Checkboxes styles*/
+input.checkType2[type="checkbox"] { display: none; }
+
+input.checkType2[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: $Text;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input.checkType2[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input.checkType2[type="checkbox"] + label:before {
+  content: '';
+  display:inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid $TextLink;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input.checkType2[type="checkbox"]:checked + label:before {
+  width: 1rem;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

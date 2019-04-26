@@ -1,0 +1,155 @@
+
+.slider{
+    /*width: 70vw;*/
+    height: 400px;
+/*    height: calc(70vw * 1.61);*/
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background-color:$Bg;
+    @media (--Tab) {
+      height: 350px;
+    }
+    @media (--Sp){
+      height: 220px;
+    }
+}
+
+.slider__content{
+    min-width: 100%;
+    position: absolute;
+  @media (--Sp){
+    top: 0;
+  }
+  @media (--Tab){
+    top: -50%;
+  }
+  @media (--Pc){
+    top: -55%;
+  }
+    left: 0;
+
+}
+
+.slider__content{
+  vertical-align: middle;
+}
+.slider__content a:hover{
+  opacity: 1;
+}
+/*
+.slider__content:nth-child(1){
+    animation: sliderAnime 12s ease-in-out infinite;
+    z-index: 3;
+}
+
+.slider__content:nth-child(2){
+    animation: sliderAnime2 12s ease-in-out 2s infinite;
+    z-index: -1;
+}
+
+.slider__content:nth-child(3){
+    animation: sliderAnime2 12s ease-in-out 6s infinite;
+    z-index: -1;
+}
+
+@keyframes sliderAnime{
+    0%{
+        z-index: 2;
+        transform: translateX(0);
+    }
+    16.6%{
+        transform: translateX(0);
+    }
+    33.3%{
+        transform: translateX(-100%);
+    }
+    50%{
+        z-index: -1;
+        transform: translateX(-100%);
+    }
+    66.6%{
+        transform: translateX(100%);
+    }
+    83.2%{
+        z-index: 2;
+        transform: translateX(100%);
+    }
+    100%{
+        z-index: 2;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sliderAnime2{
+    0%{
+        z-index: 2;
+        transform: translateX(100%);
+    }
+    16.6%{
+        transform: translateX(0);
+    }
+    33.3%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    66.6%{
+        z-index: -1;
+        transform: translateX(-100%);
+    }
+    83.2%{
+        transform: translateX(100%);
+    }
+    100%{
+        z-index: 2;
+        transform: translateX(100%);
+    }
+}*/
+
+.slider__img{
+    max-width: 100%;
+    min-width: 100%;
+}
+
+
+
+
+/* スライド変更 */
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}

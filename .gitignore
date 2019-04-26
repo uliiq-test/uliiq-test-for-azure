@@ -15,3 +15,6 @@ sw.*
 
 #VSのファイル
 .vscode
+
+#開発用ファイル
+msalWishHubDevtool.ts

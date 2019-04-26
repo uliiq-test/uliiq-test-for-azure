@@ -1,0 +1,1727 @@
+@import "reset.css";
+@import "color.css";
+@import "breakpoint.css";
+@import "menu.css";
+@import "slider.css";
+@import "rule.css";
+@import "swiper.min.css";
+@import "checkbox.css";
+
+/*共通部分*/
+html{
+  font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+  font-size: 62.5%;
+}
+body{
+  background-color: $Bg;
+  font-size: 1.4rem;
+  line-height:1.8rem;
+  color:$Text;
+}
+h2,h4{
+  color:$Black;
+}
+.container{
+  margin:0 auto;
+  /*padding:0 0 1rem 0;*/
+  @media (--Pc){
+    max-width: 1024px;
+  }
+  @media (--Tab) {
+    max-width:90%;
+  }
+  @media (--Sp){
+    padding:0;
+    max-width:100%;
+  }
+}
+header{
+  height: 56px;
+  color:$Black;
+  background-color: $White;
+  box-shadow:0 6px 3px 0px rgba(0,0,0,.2);
+  .login{
+    font-size:1.4rem;
+    a{color:$Black;}
+  }
+}
+.textCenter{
+  text-align: center;
+}
+h2{
+  font-size:1.6rem;
+  font-weight: bold;
+  padding-bottom: 3rem;
+  @media (--Sp){
+    padding-bottom:2rem;
+  }
+}
+.caution{
+  color:$Caution;
+  font-size:1.2rem;
+}
+footer{
+  width: 100%;
+  /*position: fixed;
+  bottom:0;
+  padding:20px;*/
+  background-color: $Footer_bg;
+  padding-top: 1rem;
+    @media (--Pc){
+      ul{
+        display: flex;
+      }
+    }
+    @media (--Tab) {
+      ul{
+        display: flex;
+      }
+    }
+  ul li{
+    font-size: 1.4rem;
+    margin:10px 0 10px 20px;
+     a{
+       color:$White;
+     }
+  }
+  .copy{
+    margin-top: 20px;
+    color:$White;
+    font-size:1rem;
+    padding-bottom: 10px;
+    margin-bottom:0;
+  }
+}
+.is-show {
+  transform: translateY(0);
+}
+.logo{
+  position: absolute;
+  /*width: 10rem;
+  left:2.5rem;
+  top:1rem;*/
+  width: 15rem;
+  left:2.5rem;
+  top:1.9rem;
+}
+.login{
+  text-align: right;
+  a{
+    display: inline-block;
+    margin:1rem;
+    padding:1rem;
+    border:1px solid $Black;
+  }
+}
+a:hover{opacity: 0.6;}
+
+
+/*ログイン・会員情報登録*/
+.loginArea{
+  @media (--Pc){
+      border-radius: 5px;
+      background-color: $White;
+      margin:1rem auto;
+      padding:3rem;
+      box-shadow:0 3px 3px 0px rgba(0,0,0,.2);
+  }
+  @media (--Tab){
+    padding:2rem;
+    border-radius: 5px;
+    background-color: $White;
+    margin:1rem auto;
+    box-shadow:0 3px 3px 0px rgba(0,0,0,.2);
+  }
+  @media (--Sp){
+    h2,  .caution{
+      margin-left:1rem;
+    }
+    padding:2rem 0;
+    background-color:$White;
+  }
+}
+.login_buttons{
+  display: flex;
+   justify-content:center;
+  a{
+    @media (--Pc){
+      width: 180px;
+    }
+    margin:1rem 1rem 2rem 1rem;
+    color:$White;
+    border-radius: 5px;
+    width: 120px;
+    padding:1rem;
+    display: inline-block;
+  }
+  img{
+    display: inline;
+    margin:0 1rem;
+    height:2rem;
+  }
+}
+.facebookLogin{
+  background-color: $FacebookBtn;
+}
+.twitterLogin{
+  background-color: $TwitterBtn;
+}
+
+/*会員情報入力*/
+.profileIcon{
+  position: relative;
+  border-radius: 15rem;
+  background-color:$ImageArea;
+  @media (--Pc){
+    top:-80px;
+    width: 15rem;
+    height: 15rem;
+  }
+  @media (--Tab) {
+    top:-80px;
+    width: 15rem;
+    height: 15rem;
+  }
+  @media (--Sp){
+    margin-left:2rem;
+    top:-2rem;
+    width: 8rem;
+    height:8rem;
+  }
+  div{
+    top:-1px;
+    left:-1px;
+    position: relative;
+    border-radius: 15rem;
+    border:2px solid $White;
+    @media (--Pc){
+      width: 15rem;
+      height: 15rem;
+    }
+    @media (--Tab) {
+      width: 15rem;
+      height: 15rem;
+    }
+    @media (--Sp){
+      width: 8rem;
+      height:8rem;
+    }
+  }
+}
+.mainVisual{
+  display: flex;
+  align-items:center;
+   justify-content:center;
+  background-color: $ImageArea;
+  width: 100%;
+  @media (--Pc){
+    height: 28rem;
+  }
+  @media (--Tab) {
+    height: 28rem;
+  }
+  @media (--Sp){
+    height:22rem%;
+  }
+
+}
+.mainVisualImg{
+  width: 150px;
+  height: auto;
+  @media (--Sp){
+    width: 12rem;
+    height: auto;
+  }
+}
+.ProfileIconImg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.profileEdit{
+  width: 90%;
+  margin: 10px auto;
+}
+input,textarea{
+  background: $White;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  padding:1rem;
+  border:1px solid $ImputAreaBorderColor;
+}
+select{
+  font-size: 1.4rem;
+  padding:1rem;
+  background-color: $White!important;
+}
+.submitButton{
+  margin: 2rem auto;
+  border-radius: 5px;
+  background-color: $SubmitButton;
+  padding:1rem 2rem;
+  border: none;
+  display: block;
+  box-shadow:0 3px 3px 0px rgba(0,0,0,.2);
+   &:hover{
+     opacity:0.8;
+
+   }
+}
+.genderSelect{
+  overflow: hidden;
+
+	margin: 2rem auto;
+	text-align: center;
+  display: block;
+  @media (--Pc){
+    width:92%;
+  }
+  @media (--Tab){
+    width:93%;
+  }
+  @media (--Sp){
+    width:95%;
+  }
+}
+.genderSelect select{
+width: 100%;
+padding-right: 1em;
+cursor: pointer;
+text-indent: 0.01px;
+text-overflow: ellipsis;
+border: none;
+outline: none;
+appearance: none;
+}
+.genderSelect select::-ms-expand {
+    display: none;
+}
+.genderSelect.select01 {
+	position: relative;
+	border: 1px solid $ImputAreaBorderColor;
+	background: $White;
+}
+.genderSelect.select01:before {
+	position: absolute;
+	top: 1.4rem;
+	right: 0.9em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid $ImageArea;
+	pointer-events: none;
+}
+.genderSelect.select01 select{
+  padding: 8px 38px 8px 8px;
+  color: #Black;
+}
+placeholder{
+  color:$ImageArea;
+}
+.name,textarea{
+  width: 90%;
+  display: block;
+  margin:1rem auto;
+}
+.sns{
+  margin-left:1rem;
+  @media (--Pc){
+    width: 50%;
+  }
+  @media (--Tab){
+    width: 300px;
+  }
+  @media (--Sp){
+    width: 100px;
+  }
+}
+.entry{
+  margin:2rem auto;
+}
+
+/*TOPページ */
+.recommendedLink{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  @media (--Pc){
+    top: 400px;
+  }
+  @media (--Tab) {
+    top: 400px%;
+  }
+  @media (--Sp) {
+    top:120px;
+  }
+
+  div{
+    background-color: rgba(0,0,0,.3);
+    padding:3rem;
+    border:1px solid $White;
+    color:$White;
+    @media (--Pc){
+      font-size:2.5rem;
+    }
+    @media (--Tab) {
+      font-size:2rem;
+    }
+  }
+}
+h3{
+  font-size:1.6rem;
+  margin:1rem 0;
+}
+h4{
+  font-weight: bold;
+  margin:1rem 0;
+}
+a.textLink{
+  color:$TextLink;
+}
+.bountyList{
+  display: flex;
+  padding:1rem;
+  flex-wrap: wrap;
+justify-content:center;
+
+  @media(--Tab){
+    justify-content: center;
+  }
+  @media(--Sp){
+    justify-content: center;
+  }
+  .topBaunty{
+    /*height:25rem;*/
+    width: 15rem;
+    margin: 1rem;
+    @media(--Pc){
+      /*height:32rem;*/
+      width: 20rem;
+      margin: 2rem;
+
+    }
+    .img1,.img2,.img3,.img4,.img5,.img6,.img7,.img8,.img9,.img10{
+      width:15rem;
+      height:15rem;
+      border-radius: 50%;
+
+      width: 100%;
+      @media(--Pc){
+        width: 20rem;
+        height: 20rem;
+      }
+    }
+    P{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+    }
+
+  }
+}
+.img1{
+  background: url(../img/sample_1.jpg) center center;
+  background-size: cover;
+}
+.img2{
+  background: url(../img/sample_2.jpg) center center;
+  background-size: cover;
+}
+.img3{
+  background: url(../img/sample_3.jpg) center center;
+  background-size: cover;
+}
+.marginTop30{
+  margin-top: 30px;
+}
+
+
+/*マイページ*/
+.myPage{
+  background: url(../img/sample_1.jpg) center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media(--Sp){
+    height: 22rem;
+  }
+}
+.myPageBlank{
+  background: url(../img/main_bkank.jpg) center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media(--Sp){
+    height: 22rem;
+  }
+}
+.bounty1{
+  background: url(../img/bountySample.jpg) center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bountyBlank{
+  background: url(../img/project_blank.jpg) center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.mypageTop{
+  background: $White;
+}
+.myPageIcon{
+  border:2px solid $White;
+  display: inline-block;
+  background: url(../img/sample_1.jpg) center center;
+  margin-bottom: -2rem;
+  @media(--Pc){
+    background-size: 25rem;
+    margin-bottom: -4rem;
+  }
+  @media(--Tab){
+    background-size: 25rem;
+    margin-bottom: -4rem;
+  }
+  @media(--Sp){
+    background-size: 14rem;
+    margin-left:1.5rem;
+  }
+}
+
+.myPageIconBlank{
+  border:2px solid $White;
+  display: inline-block;
+  background: url(../img/icon_blank.svg) center center;
+  margin-bottom: -2rem;
+  @media(--Pc){
+    background-size: 25rem;
+    margin-bottom: -4rem;
+  }
+  @media(--Tab){
+    background-size: 25rem;
+    margin-bottom: -4rem;
+  }
+  @media(--Sp){
+    background-size: 14rem;
+    margin-left:1.5rem;
+  }
+}
+
+.snsIcons{
+  display: flex;
+  .grow2{
+    flex-grow: 2;
+  }
+  @media(--Pc){
+    margin:-1rem 0 1rem 0;
+    justify-content:flex-end;
+  }
+  @media(--Tab){
+    margin:-1rem 0 1rem 0;
+    justify-content:flex-end;
+  }
+}
+.snsIconImg{
+  background-color: $TextLink;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5px;
+  margin: 5px;
+  img{
+    display: inline-block;
+    margin: 1rem;
+  }
+  .iconInsta{
+    margin:5px;
+  }
+  .iconTw{
+    margin:12px 10px;
+  }
+
+}
+.inlineBlock{
+  position: relative;
+  display: inline-block;
+  @media(--Pc){
+    top:-50px;
+  }
+  @media(--Tab){
+    top:-50px;
+  }
+  @media(--Sp){
+    top:-1rem;
+  }
+a.grow2{
+  margin: 5px;
+  color:$TextLink;
+  border:1px solid $TextLink;
+  border-radius: 20px;
+  p{
+    display: inline-block;
+    margin: 1.1rem .8rem;
+    @media(--Sp){
+      font-size: 1.2rem;
+    }
+    img{
+      vertical-align: middle;
+      margin-right: 5px;
+      }
+    }
+  }
+  a.on{
+    background-color: $TextLink;
+    color:$White;
+  }
+}
+.profileArea{
+  margin: 0 1rem 0 1rem;
+  @media (--Pc){
+    margin: 0 2rem 0 2rem;
+  }
+  @media (--Tab) {
+    margin: 0 2rem 0 2rem;
+  }
+
+}
+
+/*:続きを読む*/
+.grad-wrap {
+  position: relative;
+}
+.grad-wrap + .grad-wrap {
+  margin-top: 40px;
+}
+.grad-btn {
+  color:$TextLink;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  /*left: 0;*/
+  margin: auto;
+  padding: .5em 0;
+  border-radius: 2px;
+  background: $White;
+  font-size: 1.4rem;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.grad-btn::after {
+  content: "続きを読む"
+}
+.grad-btn:hover {
+  opacity: .8;
+}
+.grad-btn .fa {
+  margin-right: .5em;
+}
+.grad-item {
+  padding-top:1rem;
+  padding-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  height: 8rem;
+  margin-top:-4rem;
+  a{color:$TextLink;}
+  @media(--Sp){
+    margin:0;
+  }
+}
+.grad-wrap div.bounty{
+  margin-top:1rem;
+}
+.grad-item p + p {
+  margin-top: 1em;
+}
+.grad-item::before {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 42px; /*グラデーションで隠す範囲*/
+  background: linear-gradient(to top, $White 0%, $White 50%, $White 50%, $White 100%);
+}
+.grad-trigger {
+  display: none;
+}
+.grad-trigger:checked ~.grad-item{
+  padding-bottom: 5rem;
+}
+.grad-trigger:checked ~ .grad-btn {
+  bottom: 1rem;
+}
+.grad-trigger:checked ~ .grad-btn::after {
+  content: "閉じる"
+}
+.grad-trigger:checked ~ .grad-btn .fa {
+  transform: rotate(180deg);
+}
+.grad-trigger:checked ~ .grad-item {
+  height: auto;
+}
+.grad-trigger:checked ~ .grad-item::before {
+  display: none;
+}
+.contentsArea{
+
+  white-space:nowrap;
+  overflow: scroll;
+  -ms-overflow-style:none;
+}
+.menuBg{
+  background-color: $White;
+}
+.flexMenu{
+  background-color: $White;
+  padding:1rem 0 0;
+  width: 58rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:flex-start;
+  li{
+    display: inline;
+    margin:0 2rem;
+  }
+  a{
+    color:$Black;
+  }
+}
+.flexMenu::-webkit-scrollbar{
+  display: none;
+}
+.here{
+  font-weight: bold;
+  color: $TextLink;
+border-bottom: 2px solid $TextLink;
+padding-bottom: 1rem;
+
+}
+.activityArea{
+  margin:2rem 0;
+  padding: 2rem 0;
+}
+.activityContents{
+
+  margin:1rem;
+
+
+  .activityIcon{
+    display: inline-block;
+    background: url(../img/sample_1.jpg) center center;
+    flex-shrink: 1;
+    flex-basis: 8rem;
+    width: 8rem;
+    height: 8rem;
+    background-size: 14rem;
+    top:0;
+    margin-left:0!important;
+    @media(--Pc){
+      margin-left:1.5rem;
+    }
+    @media(--Tab){
+      margin-left:1.5rem;
+    }
+  }
+}
+.date{
+  font-size: 1.2rem;
+}
+.indent1 .activeText{
+  @media(--Pc){
+  width: calc(85% - 2rem)!important;
+  }
+  @media(--Tab){
+    width:calc(70% - 2rem)!important;
+  }
+  @media(--Sp){
+  width: calc(65% - 2rem)!important;
+  }
+}
+.activeText{
+  flex-shrink: 2;
+  vertical-align: top;
+  margin-left: 2rem;
+  display:inline-block;
+  @media(--Pc){
+    width: 75%;
+  }
+  @media(--Tab){
+    width:70%;
+  }
+  @media(--Sp){
+  width:65%;
+  }
+  p{
+    margin-bottom:.5rem;
+  }
+  a{
+    color:$TextLink;
+  }
+}
+.textRight{
+  text-align: right;
+}
+.mypageTop{
+  .textRight{
+    margin-top:-6rem;
+  }
+  a.rewardButton{
+    border-radius: 20px;
+    font-size: 1.4rem;
+    display: inline-block;
+    width: auto;
+    padding:1rem 2rem;
+    margin-bottom:0;
+    margin-right: 1rem;
+  }
+}
+
+/* マイページ　所持リワード */
+
+a.rewardButton{
+  text-align: center;
+  width: 60%;
+  color: $TextLink;
+  padding: .5rem;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 5px;
+  border: 1px solid $TextLink;
+  @media(--Pc){
+    width: 120px;
+  }
+  @media(--Tab){
+    width: 120px;
+  }
+}
+.itemCard{
+  box-shadow:0 3px 3px 0px rgba(0,0,0,.2);
+  border-radius: 5px;
+  background-color: $White;
+  margin:.5rem;
+  .rewardImg1{
+    border-radius: 5px 5px 0 0 ;
+    width: 100%;
+    height: 16rem;
+    background-size: 12rem;
+    background: url(../img/sample_1.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .rewardImg2{
+    border-radius: 5px 5px 0 0 ;
+    width: 100%;
+    height: 16rem;
+    background-size: 12rem;
+    background: url(../img/sample_2.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .rewardImg3{
+    border-radius: 5px 5px 0 0 ;
+    width: 100%;
+    height: 16rem;
+    background-size: 12rem;
+    background: url(../img/sample_3.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .rewardImg{
+    border-radius: 5px 5px 0 0 ;
+    width: 100%;
+    height: 16rem;
+    background-size: 12rem;
+    background: url(../img/reword_sample.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .rewardImgCommon{
+    border-radius: 5px 5px 0 0 ;
+    width: 100%;
+    height: 16rem;
+    background-size: 12rem;
+    background: url(../img/reward_common.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .rewardImgBlank{background: url(../img/reward_blank.jpg) center center;}
+
+
+  .rewardButtonArea{
+
+    @media(--Pc){
+      width: 300px;
+      margin:2rem auto
+    }
+    @media(--Tab){
+      width: 300px;
+      margin:2rem auto
+    }
+    @media(--Sp){
+      width: 90%;
+      margin:2rem auto
+    }
+    a.rewardButton{
+      display: inline-block;
+      margin:0 .5rem;
+      width: 40%;
+    }
+  }
+  a.ChangeButton{
+    background-color: $TextLink;
+    color:$White!important;
+  }
+
+  h4{
+    margin-top:0;
+  }
+  @media(--Pc){
+    width: 32%;
+  }
+  @media(--Tab){
+    width: 48%;
+  }
+  @media(--Sp){
+    width: 100%;
+  }
+}
+.personalItem{
+  margin: auto;
+  justify-content: flex-start!important;
+  padding:1rem 0;
+  .activityIcon{
+    display: inline-block;
+    background: url(../img/sample_1.jpg) center center;
+    width: 4rem;
+    height: 4rem;
+    background-size: 6rem;
+    margin-left:1rem;
+    top:0;
+    display: inline-block;
+    background-size: 8rem;
+
+  }
+  .activeText{
+    /*height: 4rem;
+    vertical-align: middle;*/
+    padding-top:1.5rem;
+    display: inline-block;
+    margin-left:1rem;
+  }
+}
+.personalItemText{
+  margin: 1rem;
+  p a{
+    word-wrap: break-word;
+    color:$TextLink;
+  }
+}
+.followList{
+  a{
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+}
+.projectData{
+  margin-bottom: 1rem;
+ p{
+  font-size: 1.1rem;
+  color:$Black;
+  display: inline-block;
+  margin:.2rem .5rem .2rem 0 ;
+  vertical-align: text-bottom;
+  span{
+    font-weight: bold;
+  }
+  }
+}
+.projectTagEntry{
+  background-color: $ProjectEntry;
+  border-radius: 2rem;
+  padding:.5rem;
+}
+.projectTagDiffusion{
+  background-color: $ProjectDiffusion;
+  border-radius: 2rem;
+  padding:.5rem;
+}
+.projectTagVote{
+  background-color: $ProjectVote;
+  border-radius: 2rem;
+  padding:.5rem;
+}
+.projectTagApply{
+  background-color: $ProjectApply;
+  border-radius: 2rem;
+  padding:.5rem;
+}
+.point{
+  color:$Black;
+}
+
+
+/* プロジェクト */
+.bountyIcon{
+  border:2px solid $White;
+  display: inline-block;
+  background: url(../img/sample_1.jpg) center center;
+  background-size: 10rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  margin:.5rem .5rem .5rem 1rem;
+}
+.bountyTitle{
+  margin-top:0;
+  padding-top: 1rem;
+  color:$Black;
+}
+.bountyArtistName{
+  color:$TextLink;
+  display: inline-block;
+  margin: 2rem;
+  vertical-align: text-bottom;
+  height: 2rem;
+}
+.bountyMenu{
+  width: 35rem;
+}
+.bountyMenu::-webkit-scrollbar{
+  display: none;
+}
+
+.bountyImg1{
+  background: url(../img/bountySample.jpg) center center!important;
+  background-size: 12rem!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+}
+a.retuneButton{
+  display: inline-block;
+  color:$White;
+  background-color:$TextLink;
+  border-radius: 2rem;
+  padding:1rem;
+  margin-bottom:1rem;
+  text-indent: 0;
+}
+.indent1{
+  border-left: 2px solid $ImageArea;
+  padding-left:1rem;
+  margin:1rem 0 1rem 1rem;
+  color:$ImageArea;
+}
+
+.messageEntry{
+  display: flex;
+  margin:0 1rem;
+  .submitButton{
+    margin-left:1rem;
+  }
+}
+a.joinButton{
+  color:$White;
+  background-color: $TextLink;
+
+}
+div.actionDetailCard{
+  @media(--Pc){
+  width: 100%!important;
+  div.bountyImg1{
+    height: 26rem;
+  }
+}
+  @media(--Tab){
+  width: 100%!important;
+  div.bountyImg1{
+    height: 26rem;
+  }
+}
+  @media(--Sp){
+  width: 100%!important;
+  div.bountyImg1{
+    height: 16rem;
+  }
+}
+}
+
+/*ダイアログ*/
+dialog{
+  padding: 0;
+  border: none;
+  box-shadow:0 9px 3px 0px rgba(0,0,0,.2);
+  border-radius: 5px;
+  @media(--Pc){
+    width: 60%;
+  }
+  @media(--Tab){
+    width: 65%;
+  }
+
+    @media(--Sp){
+      width: 90%;
+    }
+    .dialogImg{
+      background: url(../img/sample_1.jpg) center center;
+      background-size: cover;
+      height:20rem;
+      border-radius: 5px 5px 0 0;
+    @media(--Sp) {
+      height:10rem;
+    }
+  }
+}
+dialog::backdrop{
+  background-color:$DialogBg;
+}
+
+button.rewardButton{
+  background-color: $White;
+  text-align: center;
+  width: 60%;
+  color: $TextLink;
+  padding: .5rem;
+  display: block;
+  margin: 2rem auto 1rem auto;
+  border-radius: 5px;
+  border: 1px solid $TextLink;
+  @media(--Pc){
+    width: 120px;
+  }
+  @media(--Tab){
+    width: 120px;
+  }
+}
+.dialogMessage{
+  margin:1rem;
+}
+
+/*　バウンティ登録　*/
+.editImage{
+  background-color:$DialogBg;
+  width: 100%;
+  height: 100%;
+  .mainVisualImg{
+    display: block;
+    width:120px;
+    @media(--Pc){
+      margin:80px auto;
+    }
+    @media(--Tab){
+      margin:80px auto;
+    }
+    @media(--Sp){
+      margin:50px auto;
+    }
+  }
+}
+input.rewardButton{
+  display: inline-block;
+  background-color: $White;
+  text-align: center;
+  width: 120px;
+  color: $TextLink;
+  padding: .5rem;
+  display: block;
+  margin: 2rem auto 1rem auto;
+  border-radius: 5px;
+  border: 1px solid $TextLink;
+  margin:1rem 2rem;
+  @media(--Pc){
+    width: 120px;
+  }
+  @media(--Tab){
+    width: 120px;
+  }
+}
+input.save{
+  background-color:$TextLink!important;
+  color:$White!important;
+}
+.submitButtonArea{
+  justify-content: center;
+  display: flex;
+  @media(--Pc){
+    width: 30%;
+    margin: 0 auto;
+  }
+  @media(--Tab){
+    width: 30%;
+    margin: 0 auto;
+  }
+  @media(--Sp){
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.submitButtonArea a{
+  margin:1rem;
+
+}
+.ChangeButton{
+  background-color: $TextLink;
+  color:$White!important;
+}
+
+.hidden_box,.hidden_box2 {
+    margin: 2em 0;/*前後の余白*/
+    padding: 0;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show,  .hidden_box2 .hidden_show2 {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+/*クリックで中身表示*/
+.hidden_box input:checked ~ .hidden_show,.hidden_box2 input:checked ~ .hidden_show2 {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
+p span{
+  font-weight: bold;
+}
+.mypageTop .top60{
+  margin-top:0!important;
+}
+a.disable{
+  background:$ImputAreaBorderColor!important;
+  color:$MenuBg!important;
+  border:1px solid $ImputAreaBorderColor!important;
+}
+.memberShipCard{
+  margin:2rem auto;
+  background: url(../img/card.jpg) center center;
+  background-size: cover;
+  box-shadow:0 3px 3px 0px rgba(0,0,0,.2);
+
+  @media(--Pc){
+    width: 600px;
+    height: 600px;
+  }
+  @media(--Tab){
+    width: 600px;
+    height: 600px;
+  }
+  @media(--Sp){
+    width: 320px;
+    height: 320px;
+  }
+}
+.cardDiscription{
+
+  text-align: center;
+  @media(--Pc){
+    padding-top: 32rem;
+  }
+  @media(--Tab){
+    padding-top: 32rem;
+  }
+  @media(--Sp){
+    padding-top: 14rem;
+  }
+}
+.cardArtistName{
+  color:$TextLink;
+  font-size:1.8rem;
+  padding:2rem;
+  @media(--Pc){
+    font-size:2.4rem;
+  }
+  @media(--Tab){
+    font-size:2.4rem;
+  }
+}
+.memberShipNumber,.cardUserName{
+  color:$Black;
+  padding:1rem;
+  @media(--Pc){
+    font-size:1.8rem;
+  }
+  @media(--Tab){
+    font-size:1.8rem;
+  }
+}
+.errorText{
+  text-align: center;
+  margin: 5rem auto 2rem auto;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+.errorMessage{
+  margin:2rem auto;
+  padding: 2rem;
+  background-color: $White;
+  color:$Black;
+  border-radius: 1rem;
+}
+.textColor{
+  color:$Text;
+}
+
+.pcNone{
+  @media(--Pc){
+    display:none;
+  }
+  @media(--Tab) {
+    display:none;
+  }
+  @media(--Sp) {
+    display:block;
+  }
+}
+.spNone{
+  @media(--Pc){
+    display:inline-block;
+  }
+  @media(--Tab) {
+    display:inline-block;
+  }
+  @media(--Sp) {
+    display:none;
+  }
+}
+h3.padding10{
+  @media(--Pc){
+  padding-top:2rem;
+  margin:0 2rem;
+  }
+  @media(--Tab){
+  padding-top:2rem;
+  margin:0 2rem;
+  }
+  @media(--Sp){
+    padding-top:2rem;
+    margin:.5rem 0;
+    /*margin-bottom:1rem;*/
+  }
+
+}
+.rankingIcon{
+  width: 2rem;
+  display: inline-block;
+  margin-right: 1rem;
+}
+.indent2{
+  padding-top:.5rem;
+  text-indent: 2rem;
+}
+.fontBlack{
+  color:$Black;
+  font-size:1.2rem;
+  margin-bottom:1rem;
+}
+.rewardDescription{
+  margin-bottom:1rem;
+}
+
+/*モーダルウィンドウ*/
+
+#modal-content,.modal-content {
+	width: 50% ;
+	margin: 0 ;
+	padding: 10px 20px ;
+  border-radius: 5px;
+  box-shadow:0 9px 3px 0px rgba(0,0,0,.2);
+	background: #fff ;
+	position: fixed ;
+	display: none ;
+	z-index: 4 ;
+  @media(--Sp){
+    width: 80% ;
+  }
+}
+
+#modal-overlay {
+	z-index: 3 ;
+	display: none ;
+	position: fixed ;
+	top: 0 ;
+	left: 0 ;
+	width: 100% ;
+	height: 120% ;
+	background-color: rgba( 0,0,0, 0.3 ) ;
+}
+.dialogMessageImg{
+  margin:0 auto;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+}
+.dialogContainer{
+  margin:0 auto;
+  @media(--Pc){
+    max-width: 680px;
+  }
+  @media(-Tab){
+  max-width: 680px;
+  }
+}
+#modal-content .bountyList{
+ display: block!important;
+
+}
+#modal-content{
+ img.dialogMessageImg{
+   margin: 0 auto;
+   display: block;
+  } div.topBaunty{
+    display: block;
+    margin: 20px auto;
+  }
+}
+.topNewsArea{
+  @media(--Pc){
+    width: 60%;
+    margin:2rem auto
+  }
+  @media(--Tab){
+    width: 60%;
+    margin:2rem auto
+  }
+  @media(--Sp){
+    width: 90%;
+    margin:2rem auto
+  }
+}
+.black{
+  text-align: center;
+  color:$Black;
+}
+.modal-content{
+  padding:2rem;
+}
+.modalClose{
+  position: absolute;
+  right: -1.5rem;
+  top: -1.5rem;
+  img{
+    width: 3rem;
+    height: 3rem;
+  }
+  a:hover{
+    opacity: 1;
+  }
+}
+.iconToolTip{
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  margin:0 1rem;
+}
+.linkColor{
+  color:$TextLink;
+}
+
+.ruleArea{
+  height: 15rem;
+  overflow: scroll;
+  background-color:$White;
+  padding:2rem;
+  border-radius: 5px;
+  margin-bottom:1rem;
+}
+.marinAdd{
+  margin:1rem;
+}
+
+
+
+/* ラジオボタンCss */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1.6rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.radio-inline__input {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+.radio-inline__label {
+    padding: 1rem 2rem;
+    border:1px solid $TextLink;
+    transition: all .2s;
+}
+.buttonLeft{
+  border-radius: 5px 0 0 5px;
+}
+.buttonRight{
+  border-radius: 0 5px 5px 0;
+}
+
+.radio-inline__input:checked + .radio-inline__label {
+    background: $TextLink;
+    color: $White;
+}
+
+.radio-inline__input:focus + .radio-inline__label {
+    outline-color: $TextLink;
+    outline-offset: -2px;
+    outline-style: auto;
+    outline-width: 5px;
+}
+p{border-bottom:none;}
+a.rewardChat{
+  margin-top:.5rem;
+  display: block;
+  width: 12rem;
+  padding:.3rem 1rem;
+  background-color:$TextLink;
+  border-radius: 5px;
+  color:$White;
+}
+.chatIcon{
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  padding: .3rem;
+  vertical-align: middle;
+}
+span.chatBack{
+  display: inline-block;
+  margin:1rem;
+  color:$White;
+  background-color:$TextLink;
+  border-radius: 50%;
+  padding:.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+a.textPink{
+  color:$TextLink;
+}
+.rewardChatArea .activityArea{
+  margin-top:0;
+  padding-top:0;
+}
+input.chatEnd{
+  width: 16rem!important;
+}
+.iineArea{
+  padding-right:1rem;
+  padding-top:5px;
+  display: inline-block;
+  height: 2.5rem;
+  width: auto;
+  background-color:$TextLink;
+  border-radius: 5px;
+  color:$White!important;
+  .iconToolTip{
+    width: 20px;
+    height: auto;
+  }
+}
+.snsShare{
+  text-align: right;
+  margin:2rem 0;
+}
+.artistSnsShare{
+  right: 3rem;
+  top: -9rem;
+  position: relative;
+  text-align: right;
+  @media(--Sp){
+    top: -6rem;
+  }
+}
+.artistPage{
+  margin-top: -12rem;
+  @media(--Sp){
+    margin-top: -8rem;
+  }
+}
+.inline{
+  display: inline-block!important;
+}
+.underLine{
+  border-bottom: 1px solid $Black;
+}
+.adminLabel{
+  background-color:$TextLink;
+  text-align:center;
+  border-radius: 5px;
+  color:$White;
+  padding:.5rem;
+}
+.pcNone{
+  @media(--Pc){
+    display: none;
+  }
+  @media(--Tab){
+    display: none;
+  }
+  @media(--Sp){
+    display: block;
+  }
+}
+.spNone{
+  @media(--Pc){
+    display: block;
+  }
+  @media(--Tab){
+    display: block;
+  }
+  @media(--Sp){
+    display: none;
+  }
+}
+.underLineGlay{
+  border-bottom:1px solid $ImputAreaBorderColor;
+  margin-bottom:1rem;
+  padding-bottom:1rem;
+}
+.cardIcon{
+  height: 13px;
+  margin-right:.5rem;
+  vertical-align: text-bottom;
+}
+.mainVisualText{
+  img{
+    width: 240px;
+    height: auto;
+    display: inline-block;
+    padding-bottom:3rem;
+  }
+  p{
+    line-height: 3rem;
+    color:$White;
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    span{
+      font-size:2.2rem;
+      display: inline-block;
+      padding: 0 1rem;
+    }
+  }
+  .dmmyButton{
+    background-color:rgba(255,255,255,.5);
+    color:$Black;
+    padding:1rem;
+    font-size: 1.6rem;
+    display: inline-block;
+    border-radius: 40px;
+  }
+}
+
+
+@media(--Pc){
+  .mainVisualText{
+position:absolute;
+width: 500px;
+margin:auto;
+top:29rem;
+bottom: 0;
+left: 0;
+right: 0;
+img{
+  width: 180px;
+  height: auto;
+  display: inline-block;
+  padding-bottom:3rem;
+}
+p{
+  line-height: 3rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  span{
+    font-size: 2.6rem;
+  }
+  .dmmyButton{
+    font-size: 2.4rem;
+  }
+}
+}
+}
+@media(--Tab){
+  .mainVisualText{
+position:absolute;
+width: 500px;
+margin:auto;
+top:23rem;
+bottom: 0;
+left: 0;
+right: 0;
+img{
+  width: 180px;
+  height: auto;
+  display: inline-block;
+  padding-bottom:3rem;
+}
+p{
+  line-height: 3rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  span{
+    font-size: 2.6rem;
+  }
+  .dmmyButton{
+    font-size: 2.4rem;
+  }
+}
+}
+}
+
+@media(--Sp){
+  .mainVisualText{
+position:relative;
+top:-25rem;
+img{
+  width: 180px;
+  height: auto;
+  display: inline-block;
+  padding-bottom:2rem;
+}
+p{
+  line-height: 2rem;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  span{
+    font-size: 1.6rem;
+  }
+  .dmmyButton{
+    font-size: 1.6rem;
+  }
+}
+}
+}
+.jsframe-modal-window-background{
+  z-index: 9999;
+}
+/*
+.panel_layout{
+  margin:0 auto;
+}
+#panel_center{
+  width: 33rem;
+}*/
