@@ -1,7 +1,7 @@
 const parseArgs = require('minimist')
 
 const environment = process.env.NODE_ENV || 'development';
-const envSet = require(`./env.${environment}.js`)
+const envSet = require('./env.' + environment + '.js')
 
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
