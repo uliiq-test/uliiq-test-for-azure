@@ -1,4 +1,8 @@
 const parseArgs = require('minimist')
+
+const environment = process.env.NODE_ENV || 'development';
+const envSet = require(`./env.${environment}.js`)
+
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
     H: "hostname",
@@ -19,28 +23,27 @@ const host =
   process.env.npm_package_config_nuxt_host ||
   "127.0.0.1"
 
-
-var GTAG_ID = 'UA-XXXXXXX-XX';
-if(process.env.ASPNETCORE_ENVIRONMENT === 'production'){
+/* TODO: croess-env が正常に通った場合 物理削除する。*/
+var GTAG_ID_OLD = 'UA-XXXXXXX-XX';
+if(process.env.NODE_ENV === 'production'){
   // 本番環境設定値
-  GTAG_ID='UA-2977992-32'
-} else if (process.env.ASPNETCORE_ENVIRONMENT === 'developmen') {
+  GTAG_ID_OLD='UA-2977992-32'
+} else if (process.env.NODE_ENV === 'development') {
   // テスト環境設定値
-  GTAG_ID='UA-DDDDDDD-DD'
-} else if (process.env.ASPNETCORE_ENVIRONMENT === 'uliiq') {
+  GTAG_ID_OLD='UA-DDDDDDD-DD'
+} else if (process.env.NODE_ENV === 'uliiq') {
   // ユリーク環境設定値
-  GTAG_ID='UA-UUUUUUU-UU'
-}　else if (process.env.ASPNETCORE_ENVIRONMENT === 'local') {
+  GTAG_ID_OLD='UA-UUUUUUU-UU'
+}　else if (process.env.NODE_ENV === 'local') {
   // ローカル環境設定値
-  GTAG_ID='UA-LLLLLLL-LL'
+  GTAG_ID_OLD='UA-LLLLLLL-LL'
 }
-
 
 module.exports = {
   //TODO:現在認証がSPAモードでしか動作しないため、以下の設定を一時的に追加。
   // mode: 'spa',
   build: {
-    vendor: ['msal','vue-awesome-swiper'],
+    vendor: ['vue-awesome-swiper'],
 
     extend (config, { isClient, loaders: { vue } }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
@@ -53,22 +56,13 @@ module.exports = {
   router: {
     middleware: ['auth']
   },
-  env: {
-    baseUrl: process.env.BASE_URL || `http://${host}:${port}`,
-    //★★★★コミット時に消す★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    //★★★★コミット時に消す★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    //★★★★コミット時に消す★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    TOKEN: process.env.TOKEN
-    //★★★★コミット時に消す★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    //★★★★コミット時に消す★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    //★★★★コミット時に消す★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-  },
+  env: envSet,
   head: {
-    title: "WishHub（ウィッシュハブ）｜アイドル・アーティストの「お願い」をファンの行動で「叶える」",
+    title: "WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス",
     meta: [
       {
         name: "robots",
-        content: "noindex" 
+        content: "noindex"
       },
       { charset: "utf-8" },
       {
@@ -77,9 +71,9 @@ module.exports = {
           "width=device-width, initial-scale=1, shrink-to-fit=no"
       },
       {
-        name: "description",
+        name: "google-site-verification",
         content:
-          "ブロックチェーンにより行動支援を見える化する、まったく新しいサービスです。"
+          "AqZAAjgcZdaYEcRJ4NmfxlUcJRFzYWydrt5ojpZZDIg"
       },
       {
         name: "author",
@@ -89,12 +83,66 @@ module.exports = {
       {
         hid: "description",
         name: "description",
-        content: "Nuxt.js project"
+        content: "WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
+      },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "①WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "article"
+      },
+      {
+        hid: "og:site_name",
+        property: "og:site_name",
+        content: "WishHub"
+      },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://wishhub.fan"
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "https://wishhub.fan/img/reward_common.jpg"
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: "②WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
+      },
+      {
+        hid: "twitter:site",
+        name: "twitter:site",
+        content: "@WishHub_fan"
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "③WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: "④WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "https://wishhub.fan/img/reward_common.jpg"
+      },
+      {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: "summary_large_image"
       }
     ],
     script: [
-        { src: 'https://secure.aadcdn.microsoftonline-p.com/lib/0.1.1/js/msal.min.js' },
-        { src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', type: 'text/javascript', body: true  },
+        { src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', type: 'text/javascript', body: true  }
     ],
     link: [
       // Fonts
@@ -138,26 +186,26 @@ module.exports = {
     "@nuxtjs/pwa",
     "~/modules/typescript.js",
     ['@nuxtjs/google-analytics', {
-        id: `${GTAG_ID}`
+        id: envSet.GTAG_ID || `${GTAG_ID_OLD}`
       }
     ]
   ],
   plugins:[
-    //{ src: '~plugins/persistedstate.ts', ssr: false },
     '~/plugins/cookie-storage.ts',
-    //{ src: '~/plugins/localStorage.ts', ssr: false },
+    { src: '~/plugins/vee-validate', ssr: false },
     '~/plugins/axios.ts',
     '~/plugins/filters.ts',
     { src: '~plugins/vue-awesome-swiper.ts', ssr: false },
-    { src:'~/plugins/MsalWishHub.ts', ssr:false},
+    { src:'~/plugins/msalWishHub.ts', ssr:false},
     { src: '~/plugins/infiniteloading', ssr: false },
   ],
   manifest: {
-    name: "WishHub's Page",
-    lang: 'ja'
+    lang: 'ja',
+    name: "WishHub",
+    description: "小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
   },
   axios :{
-    baseURL: "https://wishhub-dev-api.azurewebsites.net" || `http://${host}:${port}`,    
+    baseURL: "https://wishhub-dev-api.azurewebsites.net" || `http://${host}:${port}`,
     proxy:true
   },
   proxy: {
