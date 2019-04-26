@@ -29,11 +29,11 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "build:prd": "cross-env NODE_ENV=\"production\" nuxt build",
-    "build:dev": "cross-env NODE_ENV=\"development\" nuxt build",
+    "build:tes": "cross-env NODE_ENV=\"test\" nuxt build",
     "build:uli": "cross-env NODE_ENV=\"uliiq\" nuxt build",
     "build:loc": "cross-env NODE_ENV=\"local\" nuxt build",
     "start:prd": "cross-env NODE_ENV=\"production\" nuxt start",
-    "start:dev": "cross-env NODE_ENV=\"development\" nuxt start",
+    "start:tes": "cross-env NODE_ENV=\"test\" nuxt start",
     "start:uli": "cross-env NODE_ENV=\"uliiq\" nuxt start",
     "start:loc": "cross-env NODE_ENV=\"local\"nuxt start",
     "generate": "nuxt generate"
