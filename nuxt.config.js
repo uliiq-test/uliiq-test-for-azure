@@ -1,7 +1,7 @@
 const parseArgs = require('minimist')
 
 const environment = process.env.NODE_ENV || 'development';
-const envSet = require('./env.' + environment + '.js')
+const envSet = require(`./env.${environment}.js`)
 
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
@@ -22,22 +22,6 @@ const host =
   process.env.HOST ||
   process.env.npm_package_config_nuxt_host ||
   "127.0.0.1"
-
-/* TODO: croess-env が正常に通った場合 物理削除する。*/
-var GTAG_ID_OLD = 'UA-XXXXXXX-XX';
-if(process.env.NODE_ENV === 'production'){
-  // 本番環境設定値
-  GTAG_ID_OLD='UA-2977992-32'
-} else if (process.env.NODE_ENV === 'development') {
-  // テスト環境設定値
-  GTAG_ID_OLD='UA-DDDDDDD-DD'
-} else if (process.env.NODE_ENV === 'uliiq') {
-  // ユリーク環境設定値
-  GTAG_ID_OLD='UA-UUUUUUU-UU'
-}　else if (process.env.NODE_ENV === 'local') {
-  // ローカル環境設定値
-  GTAG_ID_OLD='UA-LLLLLLL-LL'
-}
 
 module.exports = {
   //TODO:現在認証がSPAモードでしか動作しないため、以下の設定を一時的に追加。
@@ -205,10 +189,10 @@ module.exports = {
     description: "小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
   },
   axios :{
-    baseURL: "https://wishhub-dev-api.azurewebsites.net" || `http://${host}:${port}`,
+    baseURL: envSet.API_URL || `http://${host}:${port}`,
     proxy:true
   },
   proxy: {
-      '/api' :'https://wishhub-dev-api.azurewebsites.net'
+      '/api' : envSet.API_URL
   },
 }
