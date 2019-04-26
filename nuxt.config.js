@@ -88,7 +88,7 @@ module.exports = {
       {
         hid: "og:title",
         property: "og:title",
-        content: "①WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
+        content: "WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
       },
       {
         hid: "og:type",
@@ -113,7 +113,7 @@ module.exports = {
       {
         hid: "og:description",
         property: "og:description",
-        content: "②WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
+        content: "WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
       },
       {
         hid: "twitter:site",
@@ -123,12 +123,12 @@ module.exports = {
       {
         hid: "twitter:title",
         name: "twitter:title",
-        content: "③WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
+        content: "WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
       },
       {
         hid: "twitter:description",
         name: "twitter:description",
-        content: "④WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
+        content: "WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
       },
       {
         hid: "twitter:image",
