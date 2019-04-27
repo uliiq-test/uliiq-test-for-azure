@@ -1,2 +1,2 @@
 nodeProcessCommandLine: "D:\Program Files (x86)\nodejs\10.15.2\node.exe"
-NODE_ENV: "test"
+NODE_ENV: test
