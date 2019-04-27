@@ -129,7 +129,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"GTAG_ID":"UA-DDDDDDD-DD","WEB_URL":"https://wishhub-dev.azurewebsites.net","INSTANCE":"e921bc4a-b0b9-4fa2-a138-91cd0617069e","CLIENT_ID":"https://login.microsoftonline.com/tfp","DOMAIN":"wishhubdev.onmicrosoft.com","SIGN_UP_SIGN_IN_POLICY_ID":"B2C_1_wishhub_dev","API_URL":"https://wishhub-dev-api.azurewebsites.net"}// eslint-disable-line
+      env: {"GTAG_ID":"UA-LLLLLLL-LL","WEB_URL":"http://localhost:3000","INSTANCE":"a59705a8-0ef5-451d-8390-983b318cf9d7","CLIENT_ID":"https://login.microsoftonline.com/tfp","DOMAIN":"wishhub.onmicrosoft.com","SIGN_UP_SIGN_IN_POLICY_ID":"B2C_1_wishhub_dev","API_URL":"https://wishhub-dev.azurewebsites.net"}
     }
     // Only set once
     if (context.req) app.context.req = context.req

@@ -11,7 +11,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
-/* eslint-disable camelcase */
+
 import nuxt_plugin_swplugin_6e135d6c from 'nuxt_plugin_swplugin_6e135d6c' // Source: ./sw.plugin.js (ssr: false)
 import nuxt_plugin_googleanalytics_20ef1956 from 'nuxt_plugin_googleanalytics_20ef1956' // Source: ./google-analytics.js (ssr: false)
 import nuxt_plugin_axios_ddffe79e from 'nuxt_plugin_axios_ddffe79e' // Source: ./axios.js
@@ -22,8 +22,6 @@ import nuxt_plugin_filters_2dd71148 from 'nuxt_plugin_filters_2dd71148' // Sourc
 import nuxt_plugin_vueawesomeswiper_8efa2a66 from 'nuxt_plugin_vueawesomeswiper_8efa2a66' // Source: ..\\plugins\\vue-awesome-swiper.ts (ssr: false)
 import nuxt_plugin_msalWishHub_01945c74 from 'nuxt_plugin_msalWishHub_01945c74' // Source: ..\\plugins\\msalWishHub.ts (ssr: false)
 import nuxt_plugin_infiniteloading_68d2fb1c from 'nuxt_plugin_infiniteloading_68d2fb1c' // Source: ..\\plugins\\infiniteloading (ssr: false)
-
-/* eslint-enable camelcase */
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
@@ -45,7 +43,7 @@ Vue.use(Meta, {
   tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag
 })
 
-const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}// eslint-disable-line
+const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 async function createApp(ssrContext) {
   const router = await createRouter(ssrContext)
@@ -161,7 +159,6 @@ async function createApp(ssrContext) {
   }
 
   // Plugin execution
-  /* eslint-disable camelcase */
 
   if (typeof nuxt_plugin_axios_ddffe79e === 'function') await nuxt_plugin_axios_ddffe79e(app.context, inject)
   if (typeof nuxt_plugin_cookiestorage_d91145b6 === 'function') await nuxt_plugin_cookiestorage_d91145b6(app.context, inject)
@@ -176,7 +173,6 @@ async function createApp(ssrContext) {
     if (typeof nuxt_plugin_msalWishHub_01945c74 === 'function') await nuxt_plugin_msalWishHub_01945c74(app.context, inject)
     if (typeof nuxt_plugin_infiniteloading_68d2fb1c === 'function') await nuxt_plugin_infiniteloading_68d2fb1c(app.context, inject)
   }
-  /* eslint-enable camelcase */
 
   // If server-side, wait for async component to be resolved first
   if (process.server && ssrContext && ssrContext.url) {

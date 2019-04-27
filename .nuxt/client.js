@@ -29,7 +29,7 @@ let store
 // Try to rehydrate SSR data from window
 const NUXT = window.__NUXT__ || {}
 
-Object.assign(Vue.config, {"silent":true,"performance":false})// eslint-disable-line
+Object.assign(Vue.config, {"silent":true,"performance":false})
 
 // Create and mount App
 createApp()
@@ -133,7 +133,7 @@ function resolveComponents(router) {
 }
 
 function callMiddleware(Components, context, layout) {
-  let midd = ["auth"]// eslint-disable-line
+  let midd = ["auth"]
   let unknownMiddleware = false
 
   // If layout is undefined, only call global middleware
