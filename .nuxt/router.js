@@ -2,21 +2,21 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _8ad9a18c = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
-const _5e6f8765 = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
-const _34e598d8 = () => interopDefault(import('..\\pages\\account\\my\\index.vue' /* webpackChunkName: "pages_account_my_index" */))
-const _ba4a0628 = () => interopDefault(import('..\\pages\\account\\signup\\index.vue' /* webpackChunkName: "pages_account_signup_index" */))
-const _de046bb6 = () => interopDefault(import('..\\pages\\admin\\account\\index.vue' /* webpackChunkName: "pages_admin_account_index" */))
-const _628044d9 = () => interopDefault(import('..\\pages\\admin\\token\\index.vue' /* webpackChunkName: "pages_admin_token_index" */))
-const _12d0c1af = () => interopDefault(import('..\\pages\\account\\my\\bounties\\index.vue' /* webpackChunkName: "pages_account_my_bounties_index" */))
-const _d116221a = () => interopDefault(import('..\\pages\\account\\my\\profile\\index.vue' /* webpackChunkName: "pages_account_my_profile_index" */))
-const _3ba93698 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\index.vue' /* webpackChunkName: "pages_account_my_rewards_index" */))
-const _25048a9a = () => interopDefault(import('..\\pages\\account\\my\\bounties\\create\\index.vue' /* webpackChunkName: "pages_account_my_bounties_create_index" */))
-const _9a2992c8 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\create\\index.vue' /* webpackChunkName: "pages_account_my_rewards_create_index" */))
-const _e97dbe26 = () => interopDefault(import('..\\pages\\artists\\_id.vue' /* webpackChunkName: "pages_artists__id" */))
-const _76be8ea2 = () => interopDefault(import('..\\pages\\bounties\\_id.vue' /* webpackChunkName: "pages_bounties__id" */))
-const _5d5e6256 = () => interopDefault(import('..\\pages\\rewards\\_id.vue' /* webpackChunkName: "pages_rewards__id" */))
-const _49a3bea3 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _36507b00 = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
+const _209de65f = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
+const _47241f9e = () => interopDefault(import('..\\pages\\account\\my\\index.vue' /* webpackChunkName: "pages_account_my_index" */))
+const _5d669e9c = () => interopDefault(import('..\\pages\\account\\signup\\index.vue' /* webpackChunkName: "pages_account_signup_index" */))
+const _a978f4c2 = () => interopDefault(import('..\\pages\\admin\\account\\index.vue' /* webpackChunkName: "pages_admin_account_index" */))
+const _cfdad25a = () => interopDefault(import('..\\pages\\admin\\token\\index.vue' /* webpackChunkName: "pages_admin_token_index" */))
+const _63fbee16 = () => interopDefault(import('..\\pages\\account\\my\\bounties\\index.vue' /* webpackChunkName: "pages_account_my_bounties_index" */))
+const _e60ab226 = () => interopDefault(import('..\\pages\\account\\my\\profile\\index.vue' /* webpackChunkName: "pages_account_my_profile_index" */))
+const _312eee92 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\index.vue' /* webpackChunkName: "pages_account_my_rewards_index" */))
+const _6d2e5bf9 = () => interopDefault(import('..\\pages\\account\\my\\bounties\\create\\index.vue' /* webpackChunkName: "pages_account_my_bounties_create_index" */))
+const _099e5496 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\create\\index.vue' /* webpackChunkName: "pages_account_my_rewards_create_index" */))
+const _94f4979a = () => interopDefault(import('..\\pages\\artists\\_id.vue' /* webpackChunkName: "pages_artists__id" */))
+const _d5e737c8 = () => interopDefault(import('..\\pages\\bounties\\_id.vue' /* webpackChunkName: "pages_bounties__id" */))
+const _08d53bca = () => interopDefault(import('..\\pages\\rewards\\_id.vue' /* webpackChunkName: "pages_rewards__id" */))
+const _5ab3ae1d = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -74,68 +74,69 @@ export function createRouter() {
     linkActiveClass: 'nuxt-link-active',
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
-
+    /* eslint-disable quotes */
     routes: [{
       path: "/rules",
-      component: _8ad9a18c,
+      component: _36507b00,
       name: "rules"
     }, {
       path: "/tradelaw",
-      component: _5e6f8765,
+      component: _209de65f,
       name: "tradelaw"
     }, {
       path: "/account/my",
-      component: _34e598d8,
+      component: _47241f9e,
       name: "account-my"
     }, {
       path: "/account/signup",
-      component: _ba4a0628,
+      component: _5d669e9c,
       name: "account-signup"
     }, {
       path: "/admin/account",
-      component: _de046bb6,
+      component: _a978f4c2,
       name: "admin-account"
     }, {
       path: "/admin/token",
-      component: _628044d9,
+      component: _cfdad25a,
       name: "admin-token"
     }, {
       path: "/account/my/bounties",
-      component: _12d0c1af,
+      component: _63fbee16,
       name: "account-my-bounties"
     }, {
       path: "/account/my/profile",
-      component: _d116221a,
+      component: _e60ab226,
       name: "account-my-profile"
     }, {
       path: "/account/my/rewards",
-      component: _3ba93698,
+      component: _312eee92,
       name: "account-my-rewards"
     }, {
       path: "/account/my/bounties/create",
-      component: _25048a9a,
+      component: _6d2e5bf9,
       name: "account-my-bounties-create"
     }, {
       path: "/account/my/rewards/create",
-      component: _9a2992c8,
+      component: _099e5496,
       name: "account-my-rewards-create"
     }, {
       path: "/artists/:id?",
-      component: _e97dbe26,
+      component: _94f4979a,
       name: "artists-id"
     }, {
       path: "/bounties/:id?",
-      component: _76be8ea2,
+      component: _d5e737c8,
       name: "bounties-id"
     }, {
       path: "/rewards/:id?",
-      component: _5d5e6256,
+      component: _08d53bca,
       name: "rewards-id"
     }, {
       path: "/",
-      component: _49a3bea3,
+      component: _5ab3ae1d,
       name: "index"
     }],
+    /* eslint-enable quotes */
 
     fallback: false
   })
