@@ -2,6 +2,7 @@ const parseArgs = require('minimist')
 
 const environment = process.env.NODE_ENV || 'test';
 const envSet = require(`./env.${environment}.js`)
+console.log(`./env.${environment}.js`);
 
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
