@@ -44,6 +44,7 @@ module.exports = {
   head: {
     title: "WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス",
     meta: [
+      { hid: 'fb:app_id', property: 'fb:app_id', content: envSet.FB_APP_ID},
       {
         name: "robots",
         content: "noindex"

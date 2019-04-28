@@ -5,5 +5,6 @@ module.exports = {
     CLIENT_ID: 'https://login.microsoftonline.com/tfp',
     DOMAIN: 'wishhub.onmicrosoft.com',
     SIGN_UP_SIGN_IN_POLICY_ID: 'B2C_1_WishHub',
-    API_URL: 'https://api.wishhub.fan'
+    API_URL: 'https://api.wishhub.fan',
+    FB_APP_ID: ''
 }
