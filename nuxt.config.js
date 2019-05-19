@@ -2,6 +2,7 @@ const parseArgs = require('minimist')
 
 const environment = process.env.NODE_ENV || 'test';
 const envSet = require(`./env.${environment}.js`)
+console.log("[log] use : " + `./env.${environment}.js`);
 
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
@@ -36,19 +37,11 @@ module.exports = {
       }
     }
   },
-
-  router: {
-    middleware: ['auth']
-  },
   env: envSet,
   head: {
     title: "WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス",
     meta: [
       { hid: 'fb:app_id', property: 'fb:app_id', content: envSet.FB_APP_ID},
-      {
-        name: "robots",
-        content: "noindex"
-      },
       { charset: "utf-8" },
       {
         name: "viewport",
@@ -170,19 +163,23 @@ module.exports = {
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     "~/modules/typescript.js",
-    ['@nuxtjs/google-analytics', {
-        id: envSet.GTAG_ID || `${GTAG_ID_OLD}`
+    ['@nuxtjs/google-analytics',
+      { id: envSet.GTAG_ID,
+        debug: {
+          sendHitTask: (envSet.GTAG_ID ? true : false),
+        }
       }
-    ]
+  ]
   ],
   plugins:[
     '~/plugins/cookie-storage.ts',
+    { src:'~/plugins/msalWishHub.ts', ssr: false },
     { src: '~/plugins/vee-validate', ssr: false },
     '~/plugins/axios.ts',
     '~/plugins/filters.ts',
     { src: '~plugins/vue-awesome-swiper.ts', ssr: false },
-    { src:'~/plugins/msalWishHub.ts', ssr:false},
     { src: '~/plugins/infiniteloading', ssr: false },
+    '~/plugins/navi-guard.ts'
   ],
   manifest: {
     lang: 'ja',
