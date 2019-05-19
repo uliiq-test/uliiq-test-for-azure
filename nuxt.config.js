@@ -163,8 +163,10 @@ module.exports = {
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     "~/modules/typescript.js",
+    /* See https://matteogabriele.gitbooks.io/vue-analytics/content/docs/turn-off-development.html */
+    // GTAG_IDが未設定の場合はトラッキングを送信しない
     ['@nuxtjs/google-analytics',
-      { id: envSet.GTAG_ID,
+      { id: envSet.GTAG_ID || 'dummy',
         debug: {
           sendHitTask: (envSet.GTAG_ID ? true : false),
         }

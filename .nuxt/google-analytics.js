@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 
 export default async (ctx, inject) => {
-  const options = {"dev":true,"debug":{"sendHitTask":false},"id":null}
+  const options = {"dev":true,"debug":{"sendHitTask":false},"id":"dummy"}
 
   if (typeof options.asyncID === 'function') {
     options.id = await options.asyncID(ctx)
