@@ -2,7 +2,7 @@ const parseArgs = require('minimist')
 
 const environment = process.env.NODE_ENV || 'test';
 const envSet = require(`./env.${environment}.js`)
-console.log("[log] use : " + `./env.${environment}.js`);
+console.log("use crossenv: " + `./env.${environment}.js`);
 
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
@@ -166,7 +166,7 @@ module.exports = {
     /* See https://matteogabriele.gitbooks.io/vue-analytics/content/docs/turn-off-development.html */
     // GTAG_IDが未設定の場合はトラッキングを送信しない
     ['@nuxtjs/google-analytics',
-      { id: envSet.GTAG_ID || 'dummy',
+      { id: envSet.GTAG_ID || 'UA-138682818-1',
         debug: {
           sendHitTask: (envSet.GTAG_ID ? true : false),
         }
