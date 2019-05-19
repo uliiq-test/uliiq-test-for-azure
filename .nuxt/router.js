@@ -75,7 +75,7 @@ export function createRouter() {
     linkActiveClass: 'nuxt-link-active',
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
-
+    /* eslint-disable quotes */
     routes: [{
       path: "/rules",
       component: _8ad9a18c,
@@ -141,6 +141,7 @@ export function createRouter() {
       component: _49a3bea3,
       name: "index"
     }],
+    /* eslint-enable quotes */
 
     fallback: false
   })
