@@ -5,6 +5,7 @@ module.exports = {
     CLIENT_ID: 'https://login.microsoftonline.com/tfp',
     DOMAIN: 'wishhub.onmicrosoft.com',
     SIGN_UP_SIGN_IN_POLICY_ID: 'B2C_1_wishhub_dev',
+    LOGOUT_REDIRECT_URL: 'https://wishhub-dev-api-uliiq.azurewebsites.net', //ダミー
     API_URL: 'https://wishhub-dev-api-uliiq.azurewebsites.net',
     FB_APP_ID: ''
 }

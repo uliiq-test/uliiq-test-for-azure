@@ -12,7 +12,6 @@ import { createStore } from './store.js'
 
 /* Plugins */
 /* eslint-disable camelcase */
-import nuxt_plugin_swplugin_77d1d660 from 'nuxt_plugin_swplugin_77d1d660' // Source: ./sw.plugin.js (ssr: false)
 import nuxt_plugin_googleanalytics_1573cd0f from 'nuxt_plugin_googleanalytics_1573cd0f' // Source: ./google-analytics.js (ssr: false)
 import nuxt_plugin_axios_336b82b7 from 'nuxt_plugin_axios_336b82b7' // Source: ./axios.js
 import nuxt_plugin_cookiestorage_d91145b6 from 'nuxt_plugin_cookiestorage_d91145b6' // Source: ..\\plugins\\cookie-storage.ts
@@ -171,7 +170,6 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_naviguard_4bfb560e === 'function') await nuxt_plugin_naviguard_4bfb560e(app.context, inject)
 
   if (process.client) {
-    if (typeof nuxt_plugin_swplugin_77d1d660 === 'function') await nuxt_plugin_swplugin_77d1d660(app.context, inject)
     if (typeof nuxt_plugin_googleanalytics_1573cd0f === 'function') await nuxt_plugin_googleanalytics_1573cd0f(app.context, inject)
     if (typeof nuxt_plugin_msalWishHub_01945c74 === 'function') await nuxt_plugin_msalWishHub_01945c74(app.context, inject)
     if (typeof nuxt_plugin_veevalidate_6e5ad03a === 'function') await nuxt_plugin_veevalidate_6e5ad03a(app.context, inject)

@@ -161,12 +161,13 @@ module.exports = {
   build: {},
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/pwa",
+    // TODO:キャッシュ問題の切り分けで一時的に無効
+    //"@nuxtjs/pwa",
     "~/modules/typescript.js",
     /* See https://matteogabriele.gitbooks.io/vue-analytics/content/docs/turn-off-development.html */
     // GTAG_IDが未設定の場合はトラッキングを送信しない
     ['@nuxtjs/google-analytics',
-      { id: envSet.GTAG_ID || 'UA-138682818-1',
+      { id: envSet.GTAG_ID || 'dummy',
         debug: {
           sendHitTask: (envSet.GTAG_ID ? true : false),
         }

@@ -129,7 +129,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"GTAG_ID":null,"WEB_URL":"https://wishhub-dev.azurewebsites.net","INSTANCE":"e921bc4a-b0b9-4fa2-a138-91cd0617069e","CLIENT_ID":"https://login.microsoftonline.com/tfp","DOMAIN":"wishhubdev.onmicrosoft.com","SIGN_UP_SIGN_IN_POLICY_ID":"B2C_1_wishhub_dev","API_URL":"https://wishhub-dev-api.azurewebsites.net","FB_APP_ID":"305451756812793"}// eslint-disable-line
+      env: {"GTAG_ID":null,"WEB_URL":"https://wishhub-dev.azurewebsites.net","INSTANCE":"e921bc4a-b0b9-4fa2-a138-91cd0617069e","CLIENT_ID":"https://login.microsoftonline.com/tfp","DOMAIN":"wishhubdev.onmicrosoft.com","SIGN_UP_SIGN_IN_POLICY_ID":"B2C_1_wishhub_dev","LOGOUT_REDIRECT_URL":"https://wishhub-dev.azurewebsites.net","API_URL":"https://wishhub-dev-api.azurewebsites.net","FB_APP_ID":"305451756812793"}// eslint-disable-line
     }
     // Only set once
     if (context.req) app.context.req = context.req

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _1d83348c = () => interopDefault(import('..\\pages\\bounties\\index.vue' /* webpackChunkName: "pages_bounties_index" */))
 const _8ad9a18c = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
 const _5e6f8765 = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
 const _34e598d8 = () => interopDefault(import('..\\pages\\account\\my\\index.vue' /* webpackChunkName: "pages_account_my_index" */))
@@ -77,6 +78,10 @@ export function createRouter() {
     scrollBehavior,
     /* eslint-disable quotes */
     routes: [{
+      path: "/bounties",
+      component: _1d83348c,
+      name: "bounties"
+    }, {
       path: "/rules",
       component: _8ad9a18c,
       name: "rules"
@@ -125,7 +130,7 @@ export function createRouter() {
       component: _e97dbe26,
       name: "artists-id"
     }, {
-      path: "/bounties/:id?",
+      path: "/bounties/:id",
       component: _76be8ea2,
       name: "bounties-id"
     }, {
