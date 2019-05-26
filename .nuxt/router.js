@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _2134dd76 = () => interopDefault(import('..\\pages\\artists\\index.vue' /* webpackChunkName: "pages_artists_index" */))
 const _1d83348c = () => interopDefault(import('..\\pages\\bounties\\index.vue' /* webpackChunkName: "pages_bounties_index" */))
 const _8ad9a18c = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
 const _5e6f8765 = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
@@ -76,8 +77,12 @@ export function createRouter() {
     linkActiveClass: 'nuxt-link-active',
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
-    /* eslint-disable quotes */
+
     routes: [{
+      path: "/artists",
+      component: _2134dd76,
+      name: "artists"
+    }, {
       path: "/bounties",
       component: _1d83348c,
       name: "bounties"
@@ -126,7 +131,7 @@ export function createRouter() {
       component: _9a2992c8,
       name: "account-my-rewards-create"
     }, {
-      path: "/artists/:id?",
+      path: "/artists/:id",
       component: _e97dbe26,
       name: "artists-id"
     }, {
@@ -146,7 +151,6 @@ export function createRouter() {
       component: _49a3bea3,
       name: "index"
     }],
-    /* eslint-enable quotes */
 
     fallback: false
   })
