@@ -26,7 +26,7 @@ const host =
 
 module.exports = {
   //TODO:現在認証がSPAモードでしか動作しないため、以下の設定を一時的に追加。
-  // mode: 'spa',
+  mode: 'spa',
   build: {
     vendor: ['vue-awesome-swiper'],
 
