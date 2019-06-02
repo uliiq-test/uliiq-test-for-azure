@@ -13,7 +13,6 @@ const _628044d9 = () => interopDefault(import('..\\pages\\admin\\token\\index.vu
 const _12d0c1af = () => interopDefault(import('..\\pages\\account\\my\\bounties\\index.vue' /* webpackChunkName: "pages_account_my_bounties_index" */))
 const _d116221a = () => interopDefault(import('..\\pages\\account\\my\\profile\\index.vue' /* webpackChunkName: "pages_account_my_profile_index" */))
 const _3ba93698 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\index.vue' /* webpackChunkName: "pages_account_my_rewards_index" */))
-const _391dd7d6 = () => interopDefault(import('..\\pages\\account\\signup\\loading.vue' /* webpackChunkName: "pages_account_signup_loading" */))
 const _25048a9a = () => interopDefault(import('..\\pages\\account\\my\\bounties\\create\\index.vue' /* webpackChunkName: "pages_account_my_bounties_create_index" */))
 const _9a2992c8 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\create\\index.vue' /* webpackChunkName: "pages_account_my_rewards_create_index" */))
 const _e97dbe26 = () => interopDefault(import('..\\pages\\artists\\_id.vue' /* webpackChunkName: "pages_artists__id" */))
@@ -123,10 +122,6 @@ export function createRouter() {
       path: "/account/my/rewards",
       component: _3ba93698,
       name: "account-my-rewards"
-    }, {
-      path: "/account/signup/loading",
-      component: _391dd7d6,
-      name: "account-signup-loading"
     }, {
       path: "/account/my/bounties/create",
       component: _25048a9a,
