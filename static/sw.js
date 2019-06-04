@@ -86,12 +86,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "98858cd288d121c38983c48e2eff268b"
   },
   {
-    "url": "/_nuxt/cb7d1b1b346ad6c18acb.js",
-    "revision": "b8f0a2a1f633f0abac4fd3986ca46d1c"
-  },
-  {
     "url": "/_nuxt/d87d2c9ca0ec22e6fea2.js",
     "revision": "4771d181bbe303574c2ae6a67cf0beea"
+  },
+  {
+    "url": "/_nuxt/df5975d789bc16bf2ec9.js",
+    "revision": "1aa0c71e190f7660974f3a57eefb72dd"
   },
   {
     "url": "/_nuxt/e6fd14e66aff430db9ed.js",
