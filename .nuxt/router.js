@@ -4,6 +4,8 @@ import { interopDefault } from './utils'
 
 const _2134dd76 = () => interopDefault(import('..\\pages\\artists\\index.vue' /* webpackChunkName: "pages_artists_index" */))
 const _1d83348c = () => interopDefault(import('..\\pages\\bounties\\index.vue' /* webpackChunkName: "pages_bounties_index" */))
+const _05c9a13e = () => interopDefault(import('..\\pages\\devtool.vue' /* webpackChunkName: "pages_devtool" */))
+const _1f7d35a6 = () => interopDefault(import('..\\pages\\rewards\\index.vue' /* webpackChunkName: "pages_rewards_index" */))
 const _8ad9a18c = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
 const _5e6f8765 = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
 const _34e598d8 = () => interopDefault(import('..\\pages\\account\\my\\index.vue' /* webpackChunkName: "pages_account_my_index" */))
@@ -87,6 +89,14 @@ export function createRouter() {
       component: _1d83348c,
       name: "bounties"
     }, {
+      path: "/devtool",
+      component: _05c9a13e,
+      name: "devtool"
+    }, {
+      path: "/rewards",
+      component: _1f7d35a6,
+      name: "rewards"
+    }, {
       path: "/rules",
       component: _8ad9a18c,
       name: "rules"
@@ -139,11 +149,11 @@ export function createRouter() {
       component: _76be8ea2,
       name: "bounties-id"
     }, {
-      path: "/rewards/:id?",
+      path: "/rewards/:id",
       component: _910fc7e6,
       name: "rewards-id"
     }, {
-      path: "/rewards/:id?/comments/:name?",
+      path: "/rewards/:id/comments/:name?",
       component: _0ae130f1,
       name: "rewards-id-comments-name"
     }, {
