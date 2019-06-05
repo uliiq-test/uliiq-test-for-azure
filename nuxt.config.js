@@ -169,7 +169,8 @@ module.exports = {
           sendHitTask: (envSet.GTAG_ID ? true : false),
         }
       }
-  ]
+    ],
+    ['cookie-universal-nuxt', { parseJSON: false }]
   ],
   plugins:[
     '~/plugins/cookie-storage.ts',
