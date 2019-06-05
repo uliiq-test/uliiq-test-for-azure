@@ -2,10 +2,6 @@ importScripts('/_nuxt/workbox.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/_nuxt/00b055a2ed666722235d.js",
-    "revision": "bf532fc06b005744c22ce7fe4a9fb1ab"
-  },
-  {
     "url": "/_nuxt/0491d646af217215bdcc.js",
     "revision": "2789cff74a8bb12670bba87155ef5e47"
   },
@@ -46,16 +42,16 @@ workbox.precaching.precacheAndRoute([
     "revision": "122a905a021800ea89c38f3bd86f6bbf"
   },
   {
+    "url": "/_nuxt/3f6375d5a4009cd71ed4.js",
+    "revision": "6bb43f22a5bbf43352cd82d061e885b0"
+  },
+  {
     "url": "/_nuxt/424d3eddce7405e29fdb.js",
     "revision": "2823e0a36e40e162ea224e8d019d96b5"
   },
   {
     "url": "/_nuxt/43ec5c97be1480fa61c3.js",
     "revision": "1c0d498e0e7c100d7e3db938672ed7d6"
-  },
-  {
-    "url": "/_nuxt/496ab5c93d376177a967.js",
-    "revision": "4470e5d6198794a4de07e438a910c477"
   },
   {
     "url": "/_nuxt/54080bb4ba8558f468fd.js",
@@ -70,8 +66,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "70c9bd2372690974f811c72228e50830"
   },
   {
-    "url": "/_nuxt/7dd78fcce79851ac33c6.js",
-    "revision": "7326bd2315c04de56f394f536c093970"
+    "url": "/_nuxt/6d4e1525823a9533bd2a.js",
+    "revision": "61e853f3dffad9d5ff0abd4d91ba83a7"
+  },
+  {
+    "url": "/_nuxt/712d7005313bff372cf2.js",
+    "revision": "12b4cb87608066de9ea5687b4764dac3"
   },
   {
     "url": "/_nuxt/97d148cea1ad7daa88c1.js",
@@ -86,10 +86,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "17e9c19cabafd08104e7a5fcd1f3654d"
   },
   {
-    "url": "/_nuxt/bf27fba8768c0423d8be.js",
-    "revision": "2c480ccd8fe86b156d10350791c5649e"
-  },
-  {
     "url": "/_nuxt/c112f4b023bb372d8379.js",
     "revision": "98858cd288d121c38983c48e2eff268b"
   },
@@ -100,6 +96,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "/_nuxt/e6fd14e66aff430db9ed.js",
     "revision": "6077508b97039a4a64e8f5b78b72e8b8"
+  },
+  {
+    "url": "/_nuxt/ecab4963eb644b915dbc.js",
+    "revision": "377c1295be5345abfd17825de241cfd3"
   },
   {
     "url": "/_nuxt/ece8a185c62f43ea8a0e.js",
