@@ -180,7 +180,8 @@ module.exports = {
     '~/plugins/filters.ts',
     { src: '~plugins/vue-awesome-swiper.ts', ssr: false },
     { src: '~/plugins/infiniteloading', ssr: false },
-    '~/plugins/navi-guard.ts'
+    '~/plugins/navi-guard.ts',
+    { src: '~/plugins/vuejs-clipper.ts', ssr: false }
   ],
   manifest: {
     lang: 'ja',
