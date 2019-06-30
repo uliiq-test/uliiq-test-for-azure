@@ -18,13 +18,13 @@ import nuxt_plugin_googleanalytics_1573cd0f from 'nuxt_plugin_googleanalytics_15
 import nuxt_plugin_axios_336b82b7 from 'nuxt_plugin_axios_336b82b7' // Source: ./axios.js
 import nuxt_plugin_cookiestorage_d91145b6 from 'nuxt_plugin_cookiestorage_d91145b6' // Source: ..\\plugins\\cookie-storage.ts
 import nuxt_plugin_msalWishHub_01945c74 from 'nuxt_plugin_msalWishHub_01945c74' // Source: ..\\plugins\\msalWishHub.ts (ssr: false)
-import nuxt_plugin_veevalidate_6e5ad03a from 'nuxt_plugin_veevalidate_6e5ad03a' // Source: ..\\plugins\\vee-validate (ssr: false)
+import nuxt_plugin_veevalidate_1a0c172c from 'nuxt_plugin_veevalidate_1a0c172c' // Source: ..\\plugins\\vee-validate.ts
 import nuxt_plugin_axios_5659cf26 from 'nuxt_plugin_axios_5659cf26' // Source: ..\\plugins\\axios.ts
 import nuxt_plugin_filters_2dd71148 from 'nuxt_plugin_filters_2dd71148' // Source: ..\\plugins\\filters.ts
 import nuxt_plugin_vueawesomeswiper_8efa2a66 from 'nuxt_plugin_vueawesomeswiper_8efa2a66' // Source: ..\\plugins\\vue-awesome-swiper.ts (ssr: false)
-import nuxt_plugin_infiniteloading_68d2fb1c from 'nuxt_plugin_infiniteloading_68d2fb1c' // Source: ..\\plugins\\infiniteloading (ssr: false)
+import nuxt_plugin_infiniteloading_8012690a from 'nuxt_plugin_infiniteloading_8012690a' // Source: ..\\plugins\\infiniteloading.ts (ssr: false)
 import nuxt_plugin_naviguard_4bfb560e from 'nuxt_plugin_naviguard_4bfb560e' // Source: ..\\plugins\\navi-guard.ts
-import nuxt_plugin_vuejsclipper_6bde9218 from 'nuxt_plugin_vuejsclipper_6bde9218' // Source: ..\\plugins\\vuejs-clipper.ts (ssr: false)
+import nuxt_plugin_croppie_04a546b2 from 'nuxt_plugin_croppie_04a546b2' // Source: ..\\plugins\\croppie.ts (ssr: false)
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
@@ -166,6 +166,7 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_cookieuniversalnuxt_5e8ed45f === 'function') await nuxt_plugin_cookieuniversalnuxt_5e8ed45f(app.context, inject)
   if (typeof nuxt_plugin_axios_336b82b7 === 'function') await nuxt_plugin_axios_336b82b7(app.context, inject)
   if (typeof nuxt_plugin_cookiestorage_d91145b6 === 'function') await nuxt_plugin_cookiestorage_d91145b6(app.context, inject)
+  if (typeof nuxt_plugin_veevalidate_1a0c172c === 'function') await nuxt_plugin_veevalidate_1a0c172c(app.context, inject)
   if (typeof nuxt_plugin_axios_5659cf26 === 'function') await nuxt_plugin_axios_5659cf26(app.context, inject)
   if (typeof nuxt_plugin_filters_2dd71148 === 'function') await nuxt_plugin_filters_2dd71148(app.context, inject)
   if (typeof nuxt_plugin_naviguard_4bfb560e === 'function') await nuxt_plugin_naviguard_4bfb560e(app.context, inject)
@@ -174,10 +175,9 @@ async function createApp(ssrContext) {
     if (typeof nuxt_plugin_swplugin_77d1d660 === 'function') await nuxt_plugin_swplugin_77d1d660(app.context, inject)
     if (typeof nuxt_plugin_googleanalytics_1573cd0f === 'function') await nuxt_plugin_googleanalytics_1573cd0f(app.context, inject)
     if (typeof nuxt_plugin_msalWishHub_01945c74 === 'function') await nuxt_plugin_msalWishHub_01945c74(app.context, inject)
-    if (typeof nuxt_plugin_veevalidate_6e5ad03a === 'function') await nuxt_plugin_veevalidate_6e5ad03a(app.context, inject)
     if (typeof nuxt_plugin_vueawesomeswiper_8efa2a66 === 'function') await nuxt_plugin_vueawesomeswiper_8efa2a66(app.context, inject)
-    if (typeof nuxt_plugin_infiniteloading_68d2fb1c === 'function') await nuxt_plugin_infiniteloading_68d2fb1c(app.context, inject)
-    if (typeof nuxt_plugin_vuejsclipper_6bde9218 === 'function') await nuxt_plugin_vuejsclipper_6bde9218(app.context, inject)
+    if (typeof nuxt_plugin_infiniteloading_8012690a === 'function') await nuxt_plugin_infiniteloading_8012690a(app.context, inject)
+    if (typeof nuxt_plugin_croppie_04a546b2 === 'function') await nuxt_plugin_croppie_04a546b2(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

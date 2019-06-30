@@ -27,12 +27,16 @@ const host =
 module.exports = {
   build: {
     vendor: ['vue-awesome-swiper'],
-
     extend (config, { isClient, loaders: { vue } }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
         vue.transformAssetUrls.video = ['src', 'poster']
       }
+      config.module.rules.push({
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        loader: 'vue-loader'
+      })
     }
   },
   env: envSet,
@@ -156,7 +160,6 @@ module.exports = {
     "swiper/dist/css/swiper.css",
     "~assets/dest/style.css",
   ],
-  build: {},
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
@@ -175,13 +178,13 @@ module.exports = {
   plugins:[
     '~/plugins/cookie-storage.ts',
     { src:'~/plugins/msalWishHub.ts', ssr: false },
-    { src: '~/plugins/vee-validate', ssr: false },
+    '~/plugins/vee-validate.ts',
     '~/plugins/axios.ts',
     '~/plugins/filters.ts',
     { src: '~plugins/vue-awesome-swiper.ts', ssr: false },
-    { src: '~/plugins/infiniteloading', ssr: false },
+    { src: '~/plugins/infiniteloading.ts', ssr: false },
     '~/plugins/navi-guard.ts',
-    { src: '~/plugins/vuejs-clipper.ts', ssr: false }
+    { src: '~/plugins/croppie.ts', ssr: false },
   ],
   manifest: {
     lang: 'ja',
