@@ -27,16 +27,12 @@ const host =
 module.exports = {
   build: {
     vendor: ['vue-awesome-swiper'],
+
     extend (config, { isClient, loaders: { vue } }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
         vue.transformAssetUrls.video = ['src', 'poster']
       }
-      config.module.rules.push({
-        test: /\.vue$/,
-        exclude: /node_modules/,
-        loader: 'vue-loader'
-      })
     }
   },
   env: envSet,
