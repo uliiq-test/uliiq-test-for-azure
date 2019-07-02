@@ -26,8 +26,6 @@ const host =
 
 module.exports = {
   build: {
-    vendor: ['vue-awesome-swiper'],
-
     extend (config, { isClient, loaders: { vue } }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
