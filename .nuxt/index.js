@@ -11,7 +11,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
-/* eslint-disable camelcase */
+
 import nuxt_plugin_swplugin_77d1d660 from 'nuxt_plugin_swplugin_77d1d660' // Source: ./sw.plugin.js (ssr: false)
 import nuxt_plugin_cookieuniversalnuxt_5e8ed45f from 'nuxt_plugin_cookieuniversalnuxt_5e8ed45f' // Source: ./cookie-universal-nuxt.js
 import nuxt_plugin_googleanalytics_1573cd0f from 'nuxt_plugin_googleanalytics_1573cd0f' // Source: ./google-analytics.js (ssr: false)
@@ -25,8 +25,6 @@ import nuxt_plugin_vueawesomeswiper_8efa2a66 from 'nuxt_plugin_vueawesomeswiper_
 import nuxt_plugin_infiniteloading_8012690a from 'nuxt_plugin_infiniteloading_8012690a' // Source: ..\\plugins\\infiniteloading.ts (ssr: false)
 import nuxt_plugin_naviguard_4bfb560e from 'nuxt_plugin_naviguard_4bfb560e' // Source: ..\\plugins\\navi-guard.ts
 import nuxt_plugin_croppie_04a546b2 from 'nuxt_plugin_croppie_04a546b2' // Source: ..\\plugins\\croppie.ts (ssr: false)
-
-/* eslint-enable camelcase */
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
@@ -48,7 +46,7 @@ Vue.use(Meta, {
   tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag
 })
 
-const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}// eslint-disable-line
+const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 async function createApp(ssrContext) {
   const router = await createRouter(ssrContext)
@@ -164,7 +162,6 @@ async function createApp(ssrContext) {
   }
 
   // Plugin execution
-  /* eslint-disable camelcase */
 
   if (typeof nuxt_plugin_cookieuniversalnuxt_5e8ed45f === 'function') await nuxt_plugin_cookieuniversalnuxt_5e8ed45f(app.context, inject)
   if (typeof nuxt_plugin_axios_336b82b7 === 'function') await nuxt_plugin_axios_336b82b7(app.context, inject)
@@ -182,7 +179,6 @@ async function createApp(ssrContext) {
     if (typeof nuxt_plugin_infiniteloading_8012690a === 'function') await nuxt_plugin_infiniteloading_8012690a(app.context, inject)
     if (typeof nuxt_plugin_croppie_04a546b2 === 'function') await nuxt_plugin_croppie_04a546b2(app.context, inject)
   }
-  /* eslint-enable camelcase */
 
   // If server-side, wait for async component to be resolved first
   if (process.server && ssrContext && ssrContext.url) {
