@@ -25,6 +25,7 @@ import nuxt_plugin_filters_2dd71148 from 'nuxt_plugin_filters_2dd71148' // Sourc
 import nuxt_plugin_vueawesomeswiper_8efa2a66 from 'nuxt_plugin_vueawesomeswiper_8efa2a66' // Source: ..\\plugins\\vue-awesome-swiper.ts (ssr: false)
 import nuxt_plugin_infiniteloading_8012690a from 'nuxt_plugin_infiniteloading_8012690a' // Source: ..\\plugins\\infiniteloading.ts (ssr: false)
 import nuxt_plugin_naviguard_4bfb560e from 'nuxt_plugin_naviguard_4bfb560e' // Source: ..\\plugins\\navi-guard.ts
+import nuxt_plugin_croppie_04a546b2 from 'nuxt_plugin_croppie_04a546b2' // Source: ..\\plugins\\croppie.ts (ssr: false)
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
@@ -178,6 +179,7 @@ async function createApp(ssrContext) {
     if (typeof nuxt_plugin_browserimagecompression_0279d6b4 === 'function') await nuxt_plugin_browserimagecompression_0279d6b4(app.context, inject)
     if (typeof nuxt_plugin_vueawesomeswiper_8efa2a66 === 'function') await nuxt_plugin_vueawesomeswiper_8efa2a66(app.context, inject)
     if (typeof nuxt_plugin_infiniteloading_8012690a === 'function') await nuxt_plugin_infiniteloading_8012690a(app.context, inject)
+    if (typeof nuxt_plugin_croppie_04a546b2 === 'function') await nuxt_plugin_croppie_04a546b2(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first
