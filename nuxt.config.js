@@ -174,6 +174,7 @@ module.exports = {
   plugins:[
     '~/plugins/cookie-storage.ts',
     { src:'~/plugins/msalWishHub.ts', ssr: false },
+    { src:'~/plugins/browser-image-compression.ts', ssr: false },
     '~/plugins/vee-validate.ts',
     '~/plugins/axios.ts',
     '~/plugins/filters.ts',

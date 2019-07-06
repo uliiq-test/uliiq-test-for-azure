@@ -18,6 +18,7 @@ import nuxt_plugin_googleanalytics_1573cd0f from 'nuxt_plugin_googleanalytics_15
 import nuxt_plugin_axios_336b82b7 from 'nuxt_plugin_axios_336b82b7' // Source: ./axios.js
 import nuxt_plugin_cookiestorage_d91145b6 from 'nuxt_plugin_cookiestorage_d91145b6' // Source: ..\\plugins\\cookie-storage.ts
 import nuxt_plugin_msalWishHub_01945c74 from 'nuxt_plugin_msalWishHub_01945c74' // Source: ..\\plugins\\msalWishHub.ts (ssr: false)
+import nuxt_plugin_browserimagecompression_0279d6b4 from 'nuxt_plugin_browserimagecompression_0279d6b4' // Source: ..\\plugins\\browser-image-compression.ts (ssr: false)
 import nuxt_plugin_veevalidate_1a0c172c from 'nuxt_plugin_veevalidate_1a0c172c' // Source: ..\\plugins\\vee-validate.ts
 import nuxt_plugin_axios_5659cf26 from 'nuxt_plugin_axios_5659cf26' // Source: ..\\plugins\\axios.ts
 import nuxt_plugin_filters_2dd71148 from 'nuxt_plugin_filters_2dd71148' // Source: ..\\plugins\\filters.ts
@@ -174,6 +175,7 @@ async function createApp(ssrContext) {
     if (typeof nuxt_plugin_swplugin_77d1d660 === 'function') await nuxt_plugin_swplugin_77d1d660(app.context, inject)
     if (typeof nuxt_plugin_googleanalytics_1573cd0f === 'function') await nuxt_plugin_googleanalytics_1573cd0f(app.context, inject)
     if (typeof nuxt_plugin_msalWishHub_01945c74 === 'function') await nuxt_plugin_msalWishHub_01945c74(app.context, inject)
+    if (typeof nuxt_plugin_browserimagecompression_0279d6b4 === 'function') await nuxt_plugin_browserimagecompression_0279d6b4(app.context, inject)
     if (typeof nuxt_plugin_vueawesomeswiper_8efa2a66 === 'function') await nuxt_plugin_vueawesomeswiper_8efa2a66(app.context, inject)
     if (typeof nuxt_plugin_infiniteloading_8012690a === 'function') await nuxt_plugin_infiniteloading_8012690a(app.context, inject)
   }
