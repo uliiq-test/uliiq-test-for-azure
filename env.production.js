@@ -8,5 +8,6 @@ module.exports = {
     LOGIN_REDIRECT_URL: 'https://wishhub.fan/account/signup',
     LOGOUT_REDIRECT_URL: 'https://wishhub.fan',
     API_URL: 'https://api.wishhub.fan',
-    FB_APP_ID: '2342903979136724'
+    FB_APP_ID: '2342903979136724',
+    B2C_SCOPE_URL: ''
 }

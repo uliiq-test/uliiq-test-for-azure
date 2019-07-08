@@ -8,5 +8,6 @@ module.exports = {
     LOGIN_REDIRECT_URL: 'https://uliiq-wishhub.azurewebsites.net/account/signup', //ダミー
     LOGOUT_REDIRECT_URL: 'https://uliiq-wishhub.azurewebsites.net',
     API_URL: 'https://wishhub-dev-api.azurewebsites.net',
-    FB_APP_ID: ''
+    FB_APP_ID: '',
+    B2C_SCOPE_URL: 'https://uliiqauth.onmicrosoft.com/WishHub-uliiq/openid'
 }

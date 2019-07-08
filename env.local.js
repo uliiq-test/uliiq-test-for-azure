@@ -8,5 +8,6 @@ module.exports = {
     LOGIN_REDIRECT_URL: 'http://localhost:3000/account/signup',
     LOGOUT_REDIRECT_URL: 'http://localhost:3000',
     API_URL: 'https://wishhub-dev-api.azurewebsites.net',
-    FB_APP_ID: ''
+    FB_APP_ID: '',
+    B2C_SCOPE_URL: ''
 }
