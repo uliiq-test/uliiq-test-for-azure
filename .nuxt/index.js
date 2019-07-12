@@ -24,7 +24,6 @@ import nuxt_plugin_axios_5659cf26 from 'nuxt_plugin_axios_5659cf26' // Source: .
 import nuxt_plugin_filters_2dd71148 from 'nuxt_plugin_filters_2dd71148' // Source: ..\\plugins\\filters.ts
 import nuxt_plugin_vueawesomeswiper_8efa2a66 from 'nuxt_plugin_vueawesomeswiper_8efa2a66' // Source: ..\\plugins\\vue-awesome-swiper.ts (ssr: false)
 import nuxt_plugin_infiniteloading_8012690a from 'nuxt_plugin_infiniteloading_8012690a' // Source: ..\\plugins\\infiniteloading.ts (ssr: false)
-import nuxt_plugin_naviguard_4bfb560e from 'nuxt_plugin_naviguard_4bfb560e' // Source: ..\\plugins\\navi-guard.ts
 import nuxt_plugin_croppie_04a546b2 from 'nuxt_plugin_croppie_04a546b2' // Source: ..\\plugins\\croppie.ts (ssr: false)
 
 // Component: <no-ssr>
@@ -170,7 +169,6 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_veevalidate_1a0c172c === 'function') await nuxt_plugin_veevalidate_1a0c172c(app.context, inject)
   if (typeof nuxt_plugin_axios_5659cf26 === 'function') await nuxt_plugin_axios_5659cf26(app.context, inject)
   if (typeof nuxt_plugin_filters_2dd71148 === 'function') await nuxt_plugin_filters_2dd71148(app.context, inject)
-  if (typeof nuxt_plugin_naviguard_4bfb560e === 'function') await nuxt_plugin_naviguard_4bfb560e(app.context, inject)
 
   if (process.client) {
     if (typeof nuxt_plugin_swplugin_77d1d660 === 'function') await nuxt_plugin_swplugin_77d1d660(app.context, inject)
