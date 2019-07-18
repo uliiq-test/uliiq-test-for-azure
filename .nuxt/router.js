@@ -4,7 +4,6 @@ import { interopDefault } from './utils'
 
 const _2134dd76 = () => interopDefault(import('..\\pages\\artists\\index.vue' /* webpackChunkName: "pages_artists_index" */))
 const _1d83348c = () => interopDefault(import('..\\pages\\bounties\\index.vue' /* webpackChunkName: "pages_bounties_index" */))
-const _05c9a13e = () => interopDefault(import('..\\pages\\devtool.vue' /* webpackChunkName: "pages_devtool" */))
 const _1f7d35a6 = () => interopDefault(import('..\\pages\\rewards\\index.vue' /* webpackChunkName: "pages_rewards_index" */))
 const _8ad9a18c = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
 const _5e6f8765 = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
@@ -15,6 +14,7 @@ const _628044d9 = () => interopDefault(import('..\\pages\\admin\\token\\index.vu
 const _12d0c1af = () => interopDefault(import('..\\pages\\account\\my\\bounties\\index.vue' /* webpackChunkName: "pages_account_my_bounties_index" */))
 const _d116221a = () => interopDefault(import('..\\pages\\account\\my\\profile\\index.vue' /* webpackChunkName: "pages_account_my_profile_index" */))
 const _3ba93698 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\index.vue' /* webpackChunkName: "pages_account_my_rewards_index" */))
+const _2b891ece = () => interopDefault(import('..\\pages\\account\\signup\\reidirect.vue' /* webpackChunkName: "pages_account_signup_reidirect" */))
 const _25048a9a = () => interopDefault(import('..\\pages\\account\\my\\bounties\\create\\index.vue' /* webpackChunkName: "pages_account_my_bounties_create_index" */))
 const _9a2992c8 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\create\\index.vue' /* webpackChunkName: "pages_account_my_rewards_create_index" */))
 const _e97dbe26 = () => interopDefault(import('..\\pages\\artists\\_id.vue' /* webpackChunkName: "pages_artists__id" */))
@@ -89,10 +89,6 @@ export function createRouter() {
       component: _1d83348c,
       name: "bounties"
     }, {
-      path: "/devtool",
-      component: _05c9a13e,
-      name: "devtool"
-    }, {
       path: "/rewards",
       component: _1f7d35a6,
       name: "rewards"
@@ -132,6 +128,10 @@ export function createRouter() {
       path: "/account/my/rewards",
       component: _3ba93698,
       name: "account-my-rewards"
+    }, {
+      path: "/account/signup/reidirect",
+      component: _2b891ece,
+      name: "account-signup-reidirect"
     }, {
       path: "/account/my/bounties/create",
       component: _25048a9a,
