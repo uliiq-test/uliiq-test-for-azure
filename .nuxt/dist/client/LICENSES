@@ -92,6 +92,12 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
 
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
 /**
   * vue-class-component v6.3.2
   * (c) 2015-present Evan You

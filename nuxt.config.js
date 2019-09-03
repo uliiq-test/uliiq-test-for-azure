@@ -26,8 +26,6 @@ const host =
 
 module.exports = {
   build: {
-    vendor: ['vue-awesome-swiper'],
-
     extend (config, { isClient, loaders: { vue } }) {
       // クライアントのバンドルの Webpack 設定のみを拡張する
       if (isClient) {
@@ -37,7 +35,7 @@ module.exports = {
   },
   env: envSet,
   head: {
-    title: "WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス",
+    title: "WishHub（ウィッシュハブ）｜一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリです。",
     meta: [
       { hid: 'fb:app_id', property: 'fb:app_id', content: envSet.FB_APP_ID},
       { charset: "utf-8" },
@@ -59,12 +57,12 @@ module.exports = {
       {
         hid: "description",
         name: "description",
-        content: "WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
+        content: "WishHub（ウィッシュハブ）は、一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリです。"
       },
       {
         hid: "og:title",
         property: "og:title",
-        content: "WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
+        content: "WishHub（ウィッシュハブ）｜一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリ"
       },
       {
         hid: "og:type",
@@ -84,12 +82,12 @@ module.exports = {
       {
         hid: "og:image",
         property: "og:image",
-        content: "https://wishhub.fan/img/reward_common.jpg"
+        content: "https://wishhub.fan/img/top_sns_share.jpg"
       },
       {
         hid: "og:description",
         property: "og:description",
-        content: "WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
+        content: "WishHub（ウィッシュハブ）は、一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリです。"
       },
       {
         hid: "twitter:site",
@@ -99,17 +97,17 @@ module.exports = {
       {
         hid: "twitter:title",
         name: "twitter:title",
-        content: "WishHub（ウィッシュハブ）｜小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
+        content: "WishHub（ウィッシュハブ）｜一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリ"
       },
       {
         hid: "twitter:description",
         name: "twitter:description",
-        content: "WishHub（ウィッシュハブ）は、誰でも「小さな行動」で、誰かの『夢』を応援できる行動支援（アクションファンディング）サービスです。"
+        content: "WishHub（ウィッシュハブ）は、一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリです。"
       },
       {
         hid: "twitter:image",
         name: "twitter:image",
-        content: "https://wishhub.fan/img/reward_common.jpg"
+        content: "https://wishhub.fan/img/top_sns_share.jpg"
       },
       {
         hid: "twitter:card",
@@ -137,9 +135,14 @@ module.exports = {
         src: "https://fonts.googleapis.com/css?family=M+PLUS+1p"
       },
       {
-        rel: "shortcut icon",
-        href: "/favicon.ico?v=2",
-        type: "image/vnd.microsoft.icon"
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico"
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png"
       }
     ]
   },
@@ -158,7 +161,8 @@ module.exports = {
   ],
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/pwa",
+    // 不具合に伴う一時無効化
+    //"@nuxtjs/pwa",
     "~/modules/typescript.js",
     /* See https://matteogabriele.gitbooks.io/vue-analytics/content/docs/turn-off-development.html */
     // GTAG_IDが未設定の場合はトラッキングを送信しない
@@ -181,12 +185,15 @@ module.exports = {
     { src: '~plugins/vue-awesome-swiper.ts', ssr: false },
     { src: '~/plugins/infiniteloading.ts', ssr: false },
     '~/plugins/navi-guard.ts',
-    { src: '~/plugins/croppie.ts', ssr: false }
+    '~/plugins/navi-after.ts',
+    { src: '~/plugins/croppie.ts', ssr: false },
+    { src: '~/plugins/vue-awesome-swiper.ts', ssr: false },
+    { src: '~/plugins/CripBoardCopy.ts', ssr: false }
   ],
   manifest: {
     lang: 'ja',
     name: "WishHub",
-    description: "小さな行動から始める、誰かの夢のお手伝い アクションファンディングサービス"
+    description: "一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリ"
   },
   axios :{
     baseURL: envSet.API_URL || `http://${host}:${port}`,

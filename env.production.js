@@ -9,5 +9,6 @@ module.exports = {
     LOGOUT_REDIRECT_URL: 'https://wishhub.fan',
     API_URL: 'https://api.wishhub.fan',
     FB_APP_ID: '2342903979136724',
-    B2C_SCOPE_URL: ''
+    B2C_SCOPE_URL: 'https://wishhub.onmicrosoft.com/production/openid',
+    A8_PID: 's00000020374001'
 }

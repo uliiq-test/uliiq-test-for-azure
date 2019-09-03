@@ -9,5 +9,6 @@ module.exports = {
     LOGOUT_REDIRECT_URL: 'http://localhost:3000',
     API_URL: 'https://wishhub-dev-api.azurewebsites.net',
     FB_APP_ID: '',
-    B2C_SCOPE_URL: 'https://wishhubdev.onmicrosoft.com/local/openid'
+    B2C_SCOPE_URL: 'https://wishhubdev.onmicrosoft.com/local/openid',
+    A8_PID: ''
 }
