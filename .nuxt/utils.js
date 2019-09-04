@@ -122,14 +122,14 @@ export async function setContext(app, context) {
   if (!app.context) {
     app.context = {
       isStatic: process.static,
-      isDev: false,
+      isDev: true,
       isHMR: false,
       app,
       store: app.store,
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"GTAG_ID":null,"WEB_URL":"https://uliiq-wishhub.azurewebsites.net","INSTANCE":"482e06d9-31d1-44c7-a9da-ee5a3bb837da","CLIENT_ID":"https://login.microsoftonline.com/tfp","DOMAIN":"uliiqauth.onmicrosoft.com","SIGN_UP_SIGN_IN_POLICY_ID":"B2C_1_wishhub_uliiq","LOGIN_REDIRECT_URL":"https://uliiq-wishhub.azurewebsites.net/account/signup","LOGOUT_REDIRECT_URL":"https://uliiq-wishhub.azurewebsites.net","API_URL":"https://wishhub-dev-api.azurewebsites.net","FB_APP_ID":"","B2C_SCOPE_URL":"https://uliiqauth.onmicrosoft.com/WishHub-uliiq/openid","A8_PID":""}
+      env: {"GTAG_ID":null,"WEB_URL":"http://localhost:3000","INSTANCE":"a59705a8-0ef5-451d-8390-983b318cf9d7","CLIENT_ID":"https://login.microsoftonline.com/tfp","DOMAIN":"wishhubdev.onmicrosoft.com","SIGN_UP_SIGN_IN_POLICY_ID":"B2C_1_wishhub_dev","LOGIN_REDIRECT_URL":"http://localhost:3000/account/signup","LOGOUT_REDIRECT_URL":"http://localhost:3000","API_URL":"https://wishhub-dev-api.azurewebsites.net","FB_APP_ID":"","B2C_SCOPE_URL":"https://wishhubdev.onmicrosoft.com/local/openid","A8_PID":""}
     }
     // Only set once
     if (context.req) app.context.req = context.req
@@ -209,6 +209,9 @@ export function middlewareSeries(promises, appContext) {
 export function promisify(fn, context) {
   let promise
   if (fn.length === 2) {
+      console.warn('Callback-based asyncData, fetch or middleware calls are deprecated. ' +
+        'Please switch to promises or async/await syntax')
+
     // fn(context, callback)
     promise = new Promise((resolve) => {
       fn(context, function (err, data) {

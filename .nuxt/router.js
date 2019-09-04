@@ -13,7 +13,6 @@ const _ba4a0628 = () => interopDefault(import('..\\pages\\account\\signup\\index
 const _de046bb6 = () => interopDefault(import('..\\pages\\admin\\account\\index.vue' /* webpackChunkName: "pages_admin_account_index" */))
 const _628044d9 = () => interopDefault(import('..\\pages\\admin\\token\\index.vue' /* webpackChunkName: "pages_admin_token_index" */))
 const _d116221a = () => interopDefault(import('..\\pages\\account\\my\\profile\\index.vue' /* webpackChunkName: "pages_account_my_profile_index" */))
-const _2b891ece = () => interopDefault(import('..\\pages\\account\\signup\\reidirect.vue' /* webpackChunkName: "pages_account_signup_reidirect" */))
 const _25048a9a = () => interopDefault(import('..\\pages\\account\\my\\bounties\\create\\index.vue' /* webpackChunkName: "pages_account_my_bounties_create_index" */))
 const _9a2992c8 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\create\\index.vue' /* webpackChunkName: "pages_account_my_rewards_create_index" */))
 const _76be8ea2 = () => interopDefault(import('..\\pages\\bounties\\_id.vue' /* webpackChunkName: "pages_bounties__id" */))
@@ -123,10 +122,6 @@ export function createRouter() {
       path: "/account/my/profile",
       component: _d116221a,
       name: "account-my-profile"
-    }, {
-      path: "/account/signup/reidirect",
-      component: _2b891ece,
-      name: "account-signup-reidirect"
     }, {
       path: "/account/my/bounties/create",
       component: _25048a9a,
