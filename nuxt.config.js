@@ -107,7 +107,7 @@ module.exports = {
       {
         hid: "twitter:image",
         name: "twitter:image",
-        content: "https://wishhub.fan/img/top_sns_share.jpg"
+        content: "https://wishhub.fan/img/sns_share.jpg"
       },
       {
         hid: "twitter:card",
@@ -188,7 +188,8 @@ module.exports = {
     '~/plugins/navi-after.ts',
     { src: '~/plugins/croppie.ts', ssr: false },
     { src: '~/plugins/vue-awesome-swiper.ts', ssr: false },
-    { src: '~/plugins/CripBoardCopy.ts', ssr: false }
+    { src: '~/plugins/CripBoardCopy.ts', ssr: false },
+    { src: '~/plugins/vue-lazyload.ts', ssr: false }
   ],
   manifest: {
     lang: 'ja',

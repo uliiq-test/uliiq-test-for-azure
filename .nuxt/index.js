@@ -28,6 +28,7 @@ import nuxt_plugin_naviafter_70f90e62 from 'nuxt_plugin_naviafter_70f90e62' // S
 import nuxt_plugin_croppie_04a546b2 from 'nuxt_plugin_croppie_04a546b2' // Source: ..\\plugins\\croppie.ts (ssr: false)
 import nuxt_plugin_vueawesomeswiper_5ce0408e from 'nuxt_plugin_vueawesomeswiper_5ce0408e' // Source: ..\\plugins\\vue-awesome-swiper.ts (ssr: false)
 import nuxt_plugin_CripBoardCopy_1100c65e from 'nuxt_plugin_CripBoardCopy_1100c65e' // Source: ..\\plugins\\CripBoardCopy.ts (ssr: false)
+import nuxt_plugin_vuelazyload_d07c1ad4 from 'nuxt_plugin_vuelazyload_d07c1ad4' // Source: ..\\plugins\\vue-lazyload.ts (ssr: false)
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
@@ -184,6 +185,7 @@ async function createApp(ssrContext) {
     if (typeof nuxt_plugin_croppie_04a546b2 === 'function') await nuxt_plugin_croppie_04a546b2(app.context, inject)
     if (typeof nuxt_plugin_vueawesomeswiper_5ce0408e === 'function') await nuxt_plugin_vueawesomeswiper_5ce0408e(app.context, inject)
     if (typeof nuxt_plugin_CripBoardCopy_1100c65e === 'function') await nuxt_plugin_CripBoardCopy_1100c65e(app.context, inject)
+    if (typeof nuxt_plugin_vuelazyload_d07c1ad4 === 'function') await nuxt_plugin_vuelazyload_d07c1ad4(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first
