@@ -5,7 +5,6 @@ import { interopDefault } from './utils'
 const _1d83348c = () => interopDefault(import('..\\pages\\bounties\\index.vue' /* webpackChunkName: "pages_bounties_index" */))
 const _c9ade5b6 = () => interopDefault(import('..\\pages\\load.vue' /* webpackChunkName: "pages_load" */))
 const _2cd95f81 = () => interopDefault(import('..\\pages\\other\\index.vue' /* webpackChunkName: "pages_other_index" */))
-const _20efa4be = () => interopDefault(import('..\\pages\\p\\index.vue' /* webpackChunkName: "pages_p_index" */))
 const _38b2b5df = () => interopDefault(import('..\\pages\\players\\index.vue' /* webpackChunkName: "pages_players_index" */))
 const _1f7d35a6 = () => interopDefault(import('..\\pages\\rewards\\index.vue' /* webpackChunkName: "pages_rewards_index" */))
 const _8ad9a18c = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
@@ -92,10 +91,6 @@ export function createRouter() {
       path: "/other",
       component: _2cd95f81,
       name: "other"
-    }, {
-      path: "/p",
-      component: _20efa4be,
-      name: "p"
     }, {
       path: "/players",
       component: _38b2b5df,

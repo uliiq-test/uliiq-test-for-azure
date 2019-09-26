@@ -161,8 +161,7 @@ module.exports = {
   ],
   modules: [
     "@nuxtjs/axios",
-    // 不具合に伴う一時無効化
-    //"@nuxtjs/pwa",
+    "@nuxtjs/pwa",
     "~/modules/typescript.js",
     /* See https://matteogabriele.gitbooks.io/vue-analytics/content/docs/turn-off-development.html */
     // GTAG_IDが未設定の場合はトラッキングを送信しない
