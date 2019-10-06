@@ -203,10 +203,9 @@ module.exports = {
       '/api' : envSet.API_URL
   },
   // pwa safariの「プレイヤー設定（更新）で最新情報が反映されない」暫定対処
-  /*
   pwa: {
     workboxOptions: {
       skipWaiting: true
     }
-  }*/
+  }
 }
