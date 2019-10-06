@@ -175,11 +175,14 @@ module.exports = {
     ['cookie-universal-nuxt', { parseJSON: false }]
   ],
   // pwa safariの「プレイヤー設定（更新）で最新情報が反映されない」暫定対処
-  pwa: {
-    workbox: {
-      skipWaiting: true,
-      clientClaim: false
-    }
+  configureWebpack: config => {
+    config.plugins.push(
+      new GenerateSW({
+        cacheId: 'nuxt',
+        skipWaiting: true,
+        clientsClaim: false
+      })
+    )
   },
   plugins:[
     '~/plugins/cookie-storage.ts',
