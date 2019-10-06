@@ -202,4 +202,11 @@ module.exports = {
   proxy: {
       '/api' : envSet.API_URL
   },
+  /*
+  pwa: {
+    workboxOptions: {
+      skipWaiting: true
+    }
+  }
+  */
 }
