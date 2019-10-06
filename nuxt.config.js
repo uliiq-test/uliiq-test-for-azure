@@ -174,6 +174,12 @@ module.exports = {
     ],
     ['cookie-universal-nuxt', { parseJSON: false }]
   ],
+  // pwa safariの「プレイヤー設定（更新）で最新情報が反映されない」暫定対処
+  pwa: {
+    workbox: {
+      skipWaiting: true
+    }
+  },
   plugins:[
     '~/plugins/cookie-storage.ts',
     { src:'~/plugins/msal.ts', ssr: false },
@@ -202,8 +208,4 @@ module.exports = {
   proxy: {
       '/api' : envSet.API_URL
   },
-  // pwa safariの「プレイヤー設定（更新）で最新情報が反映されない」暫定対処
-  workbox: {
-    skipWaiting: true
-  }
 }
