@@ -12,7 +12,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_swplugin_77d1d660 from 'nuxt_plugin_swplugin_77d1d660' // Source: ./sw.plugin.js (ssr: false)
+import nuxt_plugin_workbox_ef33b3da from 'nuxt_plugin_workbox_ef33b3da' // Source: ./workbox.js (ssr: false)
 import nuxt_plugin_cookieuniversalnuxt_5e8ed45f from 'nuxt_plugin_cookieuniversalnuxt_5e8ed45f' // Source: ./cookie-universal-nuxt.js
 import nuxt_plugin_googleanalytics_1573cd0f from 'nuxt_plugin_googleanalytics_1573cd0f' // Source: ./google-analytics.js (ssr: false)
 import nuxt_plugin_axios_336b82b7 from 'nuxt_plugin_axios_336b82b7' // Source: ./axios.js
@@ -178,7 +178,7 @@ async function createApp(ssrContext) {
   if (typeof nuxt_plugin_naviafter_70f90e62 === 'function') await nuxt_plugin_naviafter_70f90e62(app.context, inject)
 
   if (process.client) {
-    if (typeof nuxt_plugin_swplugin_77d1d660 === 'function') await nuxt_plugin_swplugin_77d1d660(app.context, inject)
+    if (typeof nuxt_plugin_workbox_ef33b3da === 'function') await nuxt_plugin_workbox_ef33b3da(app.context, inject)
     if (typeof nuxt_plugin_googleanalytics_1573cd0f === 'function') await nuxt_plugin_googleanalytics_1573cd0f(app.context, inject)
     if (typeof nuxt_plugin_msal_369c7906 === 'function') await nuxt_plugin_msal_369c7906(app.context, inject)
     if (typeof nuxt_plugin_browserimagecompression_0279d6b4 === 'function') await nuxt_plugin_browserimagecompression_0279d6b4(app.context, inject)
