@@ -177,7 +177,8 @@ module.exports = {
   // pwa safariの「プレイヤー設定（更新）で最新情報が反映されない」暫定対処
   workbox: {
     skipWaiting: true,
-    clientsClaim: false
+    clientsClaim: false,
+    routingExtensions: '~extensions/sw.routing.js' 
   },
   plugins:[
     '~/plugins/cookie-storage.ts',
@@ -198,6 +199,9 @@ module.exports = {
   manifest: {
     lang: 'ja',
     name: "WishHub",
+    display: "fullscreen",
+    scope: "/",
+    start_url: "/",
     description: "一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリ"
   },
   axios :{
