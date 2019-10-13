@@ -8,7 +8,6 @@ const _2cd95f81 = () => interopDefault(import('..\\pages\\other\\index.vue' /* w
 const _38b2b5df = () => interopDefault(import('..\\pages\\players\\index.vue' /* webpackChunkName: "pages_players_index" */))
 const _1f7d35a6 = () => interopDefault(import('..\\pages\\rewards\\index.vue' /* webpackChunkName: "pages_rewards_index" */))
 const _8ad9a18c = () => interopDefault(import('..\\pages\\rules\\index.vue' /* webpackChunkName: "pages_rules_index" */))
-const _6531c42b = () => interopDefault(import('..\\pages\\serviceWorker.js' /* webpackChunkName: "pages_serviceWorker" */))
 const _5e6f8765 = () => interopDefault(import('..\\pages\\tradelaw\\index.vue' /* webpackChunkName: "pages_tradelaw_index" */))
 const _34e598d8 = () => interopDefault(import('..\\pages\\account\\my\\index.vue' /* webpackChunkName: "pages_account_my_index" */))
 const _ba4a0628 = () => interopDefault(import('..\\pages\\account\\signup\\index.vue' /* webpackChunkName: "pages_account_signup_index" */))
@@ -104,10 +103,6 @@ export function createRouter() {
       path: "/rules",
       component: _8ad9a18c,
       name: "rules"
-    }, {
-      path: "/serviceWorker",
-      component: _6531c42b,
-      name: "serviceWorker"
     }, {
       path: "/tradelaw",
       component: _5e6f8765,

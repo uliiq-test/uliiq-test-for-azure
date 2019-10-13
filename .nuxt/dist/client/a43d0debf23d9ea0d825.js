@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{377:function(n,e){self.addEventListener("fetch",function(n){})}}]);

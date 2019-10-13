@@ -13,7 +13,6 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_workbox_ef33b3da from 'nuxt_plugin_workbox_ef33b3da' // Source: ./workbox.js (ssr: false)
-import nuxt_plugin_nuxticons_85107e1e from 'nuxt_plugin_nuxticons_85107e1e' // Source: ./nuxt-icons.js
 import nuxt_plugin_cookieuniversalnuxt_5e8ed45f from 'nuxt_plugin_cookieuniversalnuxt_5e8ed45f' // Source: ./cookie-universal-nuxt.js
 import nuxt_plugin_googleanalytics_1573cd0f from 'nuxt_plugin_googleanalytics_1573cd0f' // Source: ./google-analytics.js (ssr: false)
 import nuxt_plugin_axios_336b82b7 from 'nuxt_plugin_axios_336b82b7' // Source: ./axios.js
@@ -169,7 +168,6 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_nuxticons_85107e1e === 'function') await nuxt_plugin_nuxticons_85107e1e(app.context, inject)
   if (typeof nuxt_plugin_cookieuniversalnuxt_5e8ed45f === 'function') await nuxt_plugin_cookieuniversalnuxt_5e8ed45f(app.context, inject)
   if (typeof nuxt_plugin_axios_336b82b7 === 'function') await nuxt_plugin_axios_336b82b7(app.context, inject)
   if (typeof nuxt_plugin_cookiestorage_d91145b6 === 'function') await nuxt_plugin_cookiestorage_d91145b6(app.context, inject)

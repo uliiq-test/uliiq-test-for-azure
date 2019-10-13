@@ -175,11 +175,6 @@ module.exports = {
     ['cookie-universal-nuxt', { parseJSON: false }]
   ],
   // pwa safariの「プレイヤー設定（更新）で最新情報が反映されない」暫定対処
-  workbox: {
-    skipWaiting: true,
-    clientsClaim: false,
-    routingExtensions: '~extensions/sw.routing.js' 
-  },
   plugins:[
     '~/plugins/cookie-storage.ts',
     { src:'~/plugins/msal.ts', ssr: false },
@@ -196,13 +191,25 @@ module.exports = {
     { src: '~/plugins/CripBoardCopy.ts', ssr: false },
     { src: '~/plugins/vue-lazyload.ts', ssr: false }
   ],
-  manifest: {
-    lang: 'ja',
-    name: "WishHub",
-    display: "fullscreen",
-    scope: "/",
-    start_url: "/",
-    description: "一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリ"
+  pwa: {
+    icons: {
+      iconSrc: "/static/apple-touch-icon.png"
+    },
+    manifest: {
+      "name": "WishHub",
+      "short_name": "WishHub",
+      "display": "fullscreen",
+      "Scope": "/",
+      "start_url": "/",
+      "description": "一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリ",
+      "splash_pages": null,
+      "lang": "ja"
+    },
+    workbox: {
+      skipWaiting: true,
+      clientsClaim: false,
+      routingExtensions: '~extensions/sw.routing.js' 
+    },
   },
   axios :{
     baseURL: envSet.API_URL || `http://${host}:${port}`,
