@@ -197,7 +197,7 @@ module.exports = {
       "short_name": "WishHub",
       "display": "fullscreen",
       "Scope": "/",
-      "start_url": "/",
+      "start_url": envSet.WEB_URL,
       "description": "一人では達成できなかった目標を、仲間を集めてゲーム感覚でチャレンジするアプリ",
       "splash_pages": null,
       "lang": "ja",
