@@ -1,4 +1,5 @@
 module.exports = {
+    GTM_ID: null,
     GTAG_ID: null,
     WEB_URL: 'http://localhost:3000',
     INSTANCE: 'a59705a8-0ef5-451d-8390-983b318cf9d7',

@@ -1,4 +1,5 @@
 module.exports = {
+    GTM_ID: 'GTM-5QDVQZ6',
     GTAG_ID: 'UA-2977992-32',
     WEB_URL: 'https://wishhub.fan',
     INSTANCE: '8b7ad74b-b66d-4bd7-b5ab-84a8c9afb619',

@@ -15,6 +15,7 @@ const _de046bb6 = () => interopDefault(import('..\\pages\\admin\\account\\index.
 const _628044d9 = () => interopDefault(import('..\\pages\\admin\\token\\index.vue' /* webpackChunkName: "pages_admin_token_index" */))
 const _d116221a = () => interopDefault(import('..\\pages\\account\\my\\profile\\index.vue' /* webpackChunkName: "pages_account_my_profile_index" */))
 const _25048a9a = () => interopDefault(import('..\\pages\\account\\my\\bounties\\create\\index.vue' /* webpackChunkName: "pages_account_my_bounties_create_index" */))
+const _c54e47ec = () => interopDefault(import('..\\pages\\account\\my\\profile\\thanks\\index.vue' /* webpackChunkName: "pages_account_my_profile_thanks_index" */))
 const _9a2992c8 = () => interopDefault(import('..\\pages\\account\\my\\rewards\\create\\index.vue' /* webpackChunkName: "pages_account_my_rewards_create_index" */))
 const _76be8ea2 = () => interopDefault(import('..\\pages\\bounties\\_id.vue' /* webpackChunkName: "pages_bounties__id" */))
 const _36e2a407 = () => interopDefault(import('..\\pages\\players\\_id.vue' /* webpackChunkName: "pages_players__id" */))
@@ -131,6 +132,10 @@ export function createRouter() {
       path: "/account/my/bounties/create",
       component: _25048a9a,
       name: "account-my-bounties-create"
+    }, {
+      path: "/account/my/profile/thanks",
+      component: _c54e47ec,
+      name: "account-my-profile-thanks"
     }, {
       path: "/account/my/rewards/create",
       component: _9a2992c8,

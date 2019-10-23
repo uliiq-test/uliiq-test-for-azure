@@ -1,4 +1,5 @@
 module.exports = {
+    GTM_ID: null,
     GTAG_ID: null,
     WEB_URL:'https://uliiq-wishhub.azurewebsites.net',
     INSTANCE: '482e06d9-31d1-44c7-a9da-ee5a3bb837da',
